@@ -1,0 +1,20 @@
+.complete-entert{
+    padding: 1rem 5%;
+    overflow-x: hidden;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem 2rem;
+}
+.enter-news{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 1rem 2rem;
+    max-width: 60vw;
+    margin: 2rem 0;
+}
+@media screen and (max-width: 760px) {
+    .complete-entert{
+        grid-template-columns: 1fr;
+    }
+}

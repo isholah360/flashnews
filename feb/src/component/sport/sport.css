@@ -1,0 +1,196 @@
+.sport-component {
+  padding: 1rem 5%;
+  overflow-x: hidden;
+}
+.sport-display {
+  margin: 2rem 0;
+}
+.sport-img {
+  width: 23rem;
+  height: 14rem;
+}
+.sport-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.sport-content {
+  width: clamp(8rem, 85vw + 1rem, 22.5rem);
+  padding: 0.7rem 0.5rem;
+}
+.sport-content .sport-auth-date {
+  display: flex;
+  gap: -2rem;
+  justify-content: space-between;
+}
+.created {
+  margin: 0 1.5rem 0 0;
+}
+.sport-auth-date {
+  margin: 0.4rem 0;
+}
+.sport-content .sport-title {
+  font-weight: bold;
+  padding: 0.5rem 0.3rem;
+  font-size: clamp(.9rem, 5vw, 1.2rem);
+}
+.sport-content .excerp {
+  margin-bottom: 0.5rem;
+  font-size: clamp(.7rem, 3vw + 1rem, 1rem);
+}
+.sport-display {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+}
+.spgrid-content {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 1rem;
+  margin: 0.8rem 0;
+  align-items: center;
+}
+.spg-img {
+  width: 9rem;
+  height: 6rem;
+}
+.spg-img img {
+  width: 100%;
+  height: 100%;
+}
+.spg-content .spg-title {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: clamp(.8rem, 4vw, 1rem);
+}
+.byauth {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  min-width: fit-content;
+}
+.like-comment {
+  display: flex;
+  gap: 0.8rem;
+  justify-items: center;
+}
+
+.like-comment img {
+  width: 1rem;
+  height: 0.9rem;
+}
+.like-number {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.sp-gridtree {
+  margin: -5.5rem 0 0 1.8rem;
+}
+.social-media .fb {
+  width: 100%;
+  background-color: rgb(58, 85, 159, 1);
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: whitesmoke;
+  font-size: 0.8rem;
+}
+.social-media {
+  background-color: #f4f4f4;
+  width: 80%;
+  padding: 0rem 8% 2rem 8%;
+  /* margin: -5.5rem 0 0 1.8rem; */
+}
+.follower {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(1rem, 20vw + 2rem, 30rem);
+  /* gap: clamp(10vw, 20vw + 1rem, 3rem); */
+  font-size: clamp(.6rem, .5vw + .3rem, 1rem);
+}
+.follower div{
+  padding: .5rem clamp(.6rem, .5vw + .3rem, .8rem);
+}
+.fb .twi {
+  filter: invert(100%) sepia(0%) saturate(7405%) hue-rotate(44deg)
+    brightness(108%) contrast(101%);
+   width:clamp(1rem, 3vw + .7rem, 1.7rem) 
+}
+.social-med{
+  width:clamp(1rem, 5vw + .8rem, 2.3rem) 
+}
+.letcnnect {
+  padding: 2rem 0 2rem 0;
+  font-weight: bold;
+  color: grey;
+}
+.tags {
+  background-color: #f4f4f4;
+  width: 80%;
+  padding: 2rem 8%;
+  margin: 1.2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+  gap: .6rem;
+}
+.tags  .the-cat{
+    padding: .5rem .8rem;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: grey;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    
+}
+.spg-ads{
+    width: 17.8rem;
+    height: 19rem;
+}
+.spg-ads img{
+    width: 100%;
+    height: 100%;
+}
+.social-med{
+
+}
+@media screen and (max-width: 360px) {
+ 
+
+}
+@media screen and (max-width: 760px) {
+  .sport-component {
+  overflow-x: hidden;
+}
+  .spgrid-content {
+    grid-template-columns: 1fr; 
+  }
+  .sport-display {
+    grid-template-columns: 1fr;
+  }
+  .sport-img {
+    width: clamp(15vw, 85vw + 1rem, 30rem);
+    height: 14rem;
+  }
+  /* .sport-content .excerp {
+    font-size: clamp(.7rem, 3vw + 1rem, 1rem);
+    width:clamp(.7rem, 10rem, 23rem);;
+  } */
+  .sp-gridtree {
+    margin: 5rem .5rem 0 .5rem;
+  }
+  .byauth {
+    max-width: clamp(10rem , 82vw + 1rem, 30rem);
+  }
+  .spg-ads{
+    width: clamp(10rem, 85vw + 1rem , 30.8rem);
+    height: 19rem;
+}
+.follower {
+  
+  width: clamp(1rem, 50vw + 2rem, 30rem);
+  /* gap: clamp(10vw, 20vw + 1rem, 3rem); */
+  font-size: clamp(.6rem, .5vw + .3rem, 1rem);
+}
+
+}

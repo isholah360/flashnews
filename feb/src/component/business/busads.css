@@ -1,0 +1,131 @@
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.busi-ads{
+    
+}
+.sub-letter{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #f4f4f4;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    width: clamp(85%, 22vw + 1rem, 30rem);
+    margin: 2rem 0;
+    
+}
+.sub-letter img{
+    width: clamp(90%, 20vw + 1rem, 20rem);
+}
+.sub-letter span{
+    font-weight: bold;
+}
+.sub-letter div{
+    padding: .8rem 0;
+    font-size: clamp(.3rem, .5vw +.2rem, .7rem);
+}
+.sub-letter input{
+    width: 85%;
+    padding: .8rem;
+    margin: 1rem 0;
+    outline: none;
+}
+.sub-letter button{
+    padding: .8rem 2rem;
+    outline: none;
+    background-color: #333333;
+    color: #fff;
+    border-style: none;
+    margin: .5rem 0 1em 0;
+}
+.sec-adsig{
+    width:clamp(14rem, 24vw + 1rem,  30rem);
+  
+  }
+.sec-adsig img{
+  width: 100%;
+}
+
+/* ennter ads */
+.mainweek{
+    background-color: #f4f4f4;
+    padding: 2rem 1rem;
+    margin: 1.5rem 0;
+    width:clamp(14rem, 24vw + 1rem,  30rem);
+    text-align: left;
+}
+.week-img-list{
+    height: 13rem;
+}
+.week-img{
+ height: 13rem;
+ position: relative;
+}
+.week-img img{
+    width: 100%;
+    height: 100%;  
+}
+.mainweek .sub-mainweek .slick-slider ul li{
+    display: none;
+}
+.weekl-title-sum .categ{
+ position: absolute;
+ top: 60%;
+ left: 1.5rem;
+ font-size: clamp(.8rem, .5vw + .5rem, 1rem);
+}
+.sub-letters{
+    background-color: #f4f4f4;
+}
+.Politics{ 
+    text-align: left;
+    font-size: clamp(.85rem, .8vw + .5rem, 1.5rem);
+    font-weight: 550;
+    background-color: #bbbbbb34;
+    margin: .75rem 0;
+    padding: .2rem .8rem;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+.Politics:hover{ 
+    background-color: #bbbbbb;
+    color: #f1f1f1;
+
+}
+.list a{
+    list-style: none;
+    text-decoration: none;
+    color: gray;
+}
+.midweek-title{
+    font-size: clamp(.9rem, .7vw + .6rem, 1.3rem);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.ent-ads{
+    width:clamp(14rem, 24vw + 1rem,  30rem);
+}
+@media screen and (max-width: 760px) {
+    .sec-adsig{
+        width:clamp(95%, 24vw + 1rem,  30rem);
+      }
+      .week-img{
+        height: 13rem;
+        position: relative;
+        width: clamp(100%, 20vw + 1rem, 20rem);
+    }
+    .ent-ads{
+        max-width: 100%;
+    }
+    .mainweek{
+        width:clamp(10%, 75vw,  30rem);
+    }
+    .weekl-title-sum .categ{
+        position: absolute;
+        top: 60%;
+        left: 1rem;
+       }
+}

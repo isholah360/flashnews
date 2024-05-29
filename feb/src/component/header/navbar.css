@@ -1,0 +1,20 @@
+
+.nvbr{
+  background: rgb(243, 242, 242);
+  height: 3.5rem;
+  font-size: .95rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo{
+  font-size: 1.5rem;
+  color: rgb(121, 41, 41);
+}
+@media screen and (max-width: 760px) {
+    .nvbr{
+      display: none;
+    }
+}

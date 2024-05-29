@@ -1,0 +1,42 @@
+.makepost{
+    margin: 1rem;
+}
+.makepost{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.theform{
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+  gap: 1rem;
+}
+form input{
+    padding: .5rem 6rem .5rem 1rem;
+    outline-style: none;
+    margin: .5rem 0;
+}
+form button{
+    margin: 1rem 0;
+    padding: .5rem 1.5rem;
+}
+.imgrid {
+   display: flex;
+   flex-direction: column;
+}
+.imgrid .upload{
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.imgrid input{
+    margin: 1rem 0;
+}
+
+.tumbnail{
+    margin: .5rem 0;
+    height: 10rem;
+    width: 95%;
+}
+.tumbnail img{
+    width: 100%;
+}

@@ -1,0 +1,180 @@
+.newimg {
+  width: 12rem;
+  height: 27rem;
+}
+.list {
+  
+}
+.lists {
+  position: relative;
+  width: 15rem;
+  height: 27rem;
+}
+.cate {
+  color: #fff;
+}
+.title-sum {
+  position: absolute;
+  top: 75%;
+  display: none;
+}
+.life {
+  background: #19c22a;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+.tech {
+  background: #f4af46;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+.sport {
+  background: #0085ff;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+.market {
+  background: #5a31f4;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+.business {
+  background: #55cec0;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+.fash {
+  background: #9c27b0;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.minlist {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: 3fr 2fr;
+  padding: 0rem 5%;
+  margin: 2rem 0 2rem 0;
+}
+.lat-left {
+  width: 53vw;
+}
+.lat-right {
+  width: 35vw;
+}
+.shild {
+}
+.theshi {
+  width: 30vw;
+  margin: 1rem 0;
+}
+.ins1 {
+}
+.ins2 {
+  width: 40%;
+}
+.mostview {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+.mostview span {
+  font-size: clamp(.9rem, 2vw, 1.2rem);
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.thehr {
+  rotate: 90deg;
+  height: 5px;
+  width: 25px;
+  border-style: none;
+  background: gray;
+}
+.authfoto {
+  width: clamp(1rem, 1rem + .8vw, 2rem)
+}
+.authfoto img {
+  width: 100%;
+  border-radius: 50%;
+}
+.author-nmfoto {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.authdate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .3rem 0 0 0;
+}
+.new_photo {
+  max-width: 6.5rem;
+}
+.new_photo img {
+  width: 100%;
+  height: 5.5rem;
+}
+.list-sec {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: .5rem 0;
+}
+.most-title {
+  font-size: "1.05rem";
+  margin: ".6rem 0";
+  padding: "0rem 0 .2rem 0";
+}
+@media screen and (max-width: 300px) {
+  .new_photo {
+    display: none;
+  }
+}
+@media screen and (max-width: 760px) {
+  .minlist {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+  .lat-left {
+    width: 90vw;
+    overflow-x: hidden;
+  }
+  .lat-right {
+    width: 90vw;
+    margin: 1rem 1rem 0 0;
+  }
+  .theshi {
+    width: 90vw;
+    margin: 1rem 0rem;
+    padding: 0;
+  }
+  .authdate {
+    font-size: 0.8rem;
+    margin: .5rem 0 0 0;
+  }
+  .most-title {
+    font-size: ".8rem";
+    margin: "1rem 0";
+    padding: "1rem 0 .5rem 0";
+    
+  }
+  .lists {
+    position: relative;
+    width: 15rem;
+    max-height: 28rem;
+  }
+  .newimg{
+  }
+ .lat-left div div ul li{
+    display: none;
+ }
+}

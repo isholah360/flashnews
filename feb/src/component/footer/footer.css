@@ -1,0 +1,123 @@
+.the-footer-path{
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(auto-fit, minmax(22%, 1fr));
+    gap: 1rem 2.5rem;
+    padding: 2rem 10%;
+    background-color: #212121;
+    color: #fff;
+}
+.date-up-comm {
+ margin-left: 2rem;
+}
+.date-up-comm p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    
+}
+.date-up-comm .date-com-list{
+   margin: .5rem 0;
+}
+
+.date-up-pages .date-com-list{
+    margin: .5rem 0;
+    width: 3rem;
+ }
+ .date-up-pages .last{
+    margin: .5rem 0;
+    width: 5rem;
+ }
+ .date-up-pages .last span{
+    margin: .5rem 0;
+    width: 10rem;
+ }
+.date-up-pages p{
+    font-size: 1.2rem;
+    font-weight: 500; 
+    cursor: pointer;  
+}
+.date-up-social p{
+    font-size: 1.2rem;
+    font-weight: 500; 
+    cursor: pointer;
+}
+.date-up-register p{
+    font-size: 1.2rem;
+    font-weight: 500; 
+}
+.date-up-pages .date-com-list{
+
+}
+.date-up-social p{
+    font-weight: 500;
+    text-align: left;
+}
+.date-up-social .media-logo{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 1rem;
+    margin: .5rem 0;
+}
+.media-logo img{
+    width: 1.2rem;
+    height: 1.2rem;
+    filter: invert(99%) sepia(36%) saturate(2%) 
+    hue-rotate(150deg) brightness(113%) contrast(101%);
+}
+.button button{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 1.8rem;
+  
+}
+.media-logo:hover{
+    margin: 0 0 0 -.5rem;
+    transition: 200ms;
+    cursor: pointer;
+}
+.date-com-list:hover{
+    margin: 0 0 0 -.5rem;
+    transition: 200ms;
+    cursor: pointer;
+}
+.last:hover{
+    margin: 0 0 0 -.5rem;
+    transition: 200ms;
+    cursor: pointer;
+}
+.little-content form{
+    display: flex;
+    align-items: center;
+}
+.little-content form{
+    position: relative;
+    height: 1.5rem;
+}
+.little-content form input{
+    max-width: clamp(2rem, 4vw + .5rem, 5rem);
+    padding: .2rem 7rem .2rem 1rem;
+    height: 1.5rem;
+    border-style: none;
+}
+.little-content form button{
+    padding: .5rem .9rem;
+    border-style: none;
+}
+.subscribeto-dateup{
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 760px) {
+    .the-footer-path{
+        display: grid;
+        text-align: left;
+        grid-template-columns: 1fr;
+        width: 85vw;
+        margin: 3rem auto;
+    }
+}
+

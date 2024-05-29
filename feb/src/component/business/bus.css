@@ -1,0 +1,90 @@
+.busines-comp{
+    padding: 1rem 5%;
+    overflow-x: hidden;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.buiness-news{
+    display: flex;
+     gap: 2rem;
+    flex-wrap: wrap;
+}
+.buiness-news div .sport-img{
+    width: clamp(15vw, 85vw + 1rem, 25rem);
+    height: 18rem;
+    position: relative;
+}
+.cat-color{
+    position: absolute;
+    top: 85%;
+    left: 5%;
+}
+.fetch-bus{
+    margin: 2rem 0 2rem 0;
+}
+/* Busi css*/
+.busin-complete{
+  max-width: 60vw;
+}
+.complete-busi-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem 2rem;
+
+}
+.busi-foto-content{
+    display: flex;
+    gap: 1rem;
+}
+.busi-nfoto{
+    width: clamp(5rem, 15vw + 1rem, 12rem);
+    height: 8rem;
+    position: relative;
+}
+.busi-nfoto img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.busicat{
+    display: none;
+}
+.busi-ncontent{
+    font-size: clamp(.5rem, 2vw + .5rem, 1rem);
+    padding: 1rem 0;
+}
+.busi-categ{
+    display: flex;
+    justify-content: space-between;
+  
+}
+.bus-cate-main{
+    font-weight: bold;
+}
+.bus-auth-coment{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.bus-contitle{
+    padding: .8rem 0;
+    font-weight: bold;
+}
+@media screen and (max-width: 760px) {
+    .busi-nfoto{
+        width: clamp(5rem, 85vw + 1rem, 30rem);
+        height: 13rem;
+    }
+    .busi-foto-content{
+        flex-wrap: wrap;
+   
+    }
+    .busicat{
+        display: block;
+    }
+    .busi-ncontent{
+        width: clamp(5rem, 90vw + 1rem, 30rem);
+    }
+}
