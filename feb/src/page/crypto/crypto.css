@@ -1,0 +1,238 @@
+.newstyle .slick-slider .slick-thumb {
+  display: flex;
+}
+.cryp-left {
+  max-width: clamp(45vw, 55vw + 1rem, 60rem);
+  height: 30vh;
+  position: relative;
+}
+.home-caterg {
+  padding: 2rem 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.clas-home,
+.class-atge {
+  background-color: lightgray;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+}
+.crypt-img-cover {
+  max-width: clamp(45vw, 55vw + 1rem, 60rem);
+  height: 30vh;
+  left: 0;
+  position: relative;
+}
+
+.bolder-img img {
+  width: 100%;
+  height: 100%;
+}
+.crypt-main-img {
+  height: 100%;
+}
+.cryp-darkcovr {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border-image: fill 1
+    linear-gradient(
+      rgba(255, 255, 255, 0.068),
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 0.144),
+      rgba(0, 0, 0, 0.582)
+    );
+  color: #fff;
+}
+.thumb-img {
+  width: clamp(9vw, 10vw + 1rem, 9rem);
+  height: 7rem;
+}
+.thumb-img img {
+  width: 100%;
+  height: 100%;
+}
+.crypto-completer-div {
+  padding: 2rem 5% 2rem 5%;
+}
+.thefirst-sectin {
+  display: flex;
+  position: relative;
+}
+.newstyle-two {
+  padding: 3rem 2rem 0 3.5rem;
+}
+.bolder-img {
+}
+.crypto-conent {
+  position: relative;
+  padding: 0% 2rem 0 2rem;
+  max-width: 45rem;
+  top: 60%;
+}
+.crypto-conents {
+  position: relative;
+  padding: 0% 2rem 0 2rem;
+  max-width: 50rem;
+  top: 62%;
+}
+.crypt-cate {
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: -1rem;
+}
+.crypt-cate span {
+  background-color: #f5b873;
+  font-size: clamp(1.2vw, 1.5vw + 0.25rem, 1rem);
+  padding: 0.35rem 0.8rem 0.4rem 0.8rem;
+  border-radius: 10px;
+}
+.crypt-title {
+  font-size: clamp(100%, 1.7vw + 0.5rem, 1.7rem);
+  font-weight: bold;
+  width: 85%;
+}
+.crypt-title:hover {
+  color: #cccccccc;
+}
+.crypt-sec-two {
+  margin: 3rem 0 1rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+.sec-two-one {
+  width: 100%;
+}
+.sec-two-two {
+  width: 80%;
+  padding: auto 1rem;
+}
+.bolder-rest-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 0.6rem;
+}
+.cryto-rest-img {
+  max-width: clamp(90vw, 25vw + 1rem, 30rem);
+  padding: 0.85rem 0;
+}
+.cryto-rest-img img {
+  width: 100%;
+}
+
+.sec-crypt-title {
+  font-size: clamp(1.8vw, 1.8vw + 0.5rem, 1.5rem);
+  font-weight: 500;
+  max-width: clamp(90vw, 30vw + 1rem, 30rem);
+}
+.sec-crypt-title a {
+  color: rgb(15, 15, 15);
+}
+.sec-crypt-title a:hover {
+  color: rgba(104, 103, 103, 0.849);
+}
+.sec-crypt-title .byauth .spg-author {
+  font-size: clamp(0.5rem, 2vw + 5rem, 1.1rem);
+  font-weight: 400;
+}
+
+.search-form {
+  position: relative;
+  padding: -0.5rem 0 0rem 0;
+}
+.search-form form {
+  height: 2rem;
+  width: 85%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-form form input {
+  outline-style: none;
+  border-style: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(228, 228, 228);
+}
+.crypt-latest {
+  padding: 2rem 0 0 0;
+}
+.search-sym {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  right: 0;
+  border-style: none;
+  padding: 1.5rem 1rem;
+  background-color: gray;
+}
+.search-sym img {
+  width: 1.5rem;
+  align-self: center;
+}
+.cryp-social {
+  margin: 1.85rem 0;
+}
+.pagination {
+  margin-top: 20rem;
+}
+.the-active-cover .incover {
+  width: 100%;
+  height: 45vh;
+  position: relative;
+}
+.incover img {
+  width: 100%;
+  height: 100%;
+}
+.incover .in-title {
+  position: absolute;
+  top: 70%;
+  color: #fff;
+  font-size: clamp(2vw, 2.5vw + 0.5rem, 3rem);
+  font-weight: 600;
+  left: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .thefirst-sectin {
+    flex-wrap: wrap;
+  }
+  .cryp-left {
+    max-width: clamp(90vw, 90vw + 1rem, 90%);
+  }
+  .crypt-img-cover {
+    max-width: clamp(90vw, 90vw + 1rem, 90%);
+  }
+  .bolder-rest-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .crypt-sec-two {
+    grid-template-columns: 1fr;
+  }
+  .crypt-title {
+    width: clamp(50vw, 70vw + 1rem, 90%);
+  }
+  .newstyle-two {
+    max-width: 90%;
+    margin-left: -1.5rem;
+    padding: 1rem 7%;
+    margin-top: 15rem;
+  }
+  .bolder-img img {
+    width: 100%;
+    height: 22rem;
+  }
+  .pagination {
+    margin-top: 5rem;
+  }
+  .the-active-cover .incover {
+    height: 30vh;
+  }
+}

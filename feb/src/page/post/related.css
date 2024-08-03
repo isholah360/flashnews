@@ -1,0 +1,76 @@
+.related-post{
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    gap: 1rem;
+    width: 100%;
+}
+.related-p{
+ width: 8rem;
+}
+.theline{
+  
+    margin-inline: 1rem;
+    width: 65%;
+    /* padding: 1rem 0 1.75rem 0; */
+}
+.theline hr{
+  width: 100%;
+  height: 2px; 
+  background-color: gray;
+  border-style: none;
+}
+.related-ding-foto{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.related-foto{
+    height: 20rem;
+    width: 15.5rem;
+    position: relative;
+}
+.related-foto img{
+   width: 100%;
+   height: 100%;
+}
+.wholebutton{
+    position: relative;
+    
+}
+.butoon{
+    top: 0;
+    font-size: 2.5rem;
+    gap: 1rem;
+    z-index: inherit;
+    display: flex;
+}
+
+.butoon .button{
+    background-color: #f1f1f1;
+    color: gray;
+    border-radius: 50%;
+    display: flex;
+    padding: .5rem .5rem 1rem .5rem;
+    justify-content: center;
+    align-items: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    
+}
+.feat-cats{
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+}
+.feat-cats a{
+    color: #fff;
+}
+.xtra-button{
+    z-index: 300;
+}
+.markets {
+    background: #5a31f4;
+    padding: 0.2rem 0.8rem;
+    border-radius: 5px;
+    color: #fff;
+}

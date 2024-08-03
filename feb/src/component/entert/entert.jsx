@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./entert.css";
 import EntAds from "./entAds";
+import { Link } from "react-router-dom";
 
 function Entert() {
   const baseUrl = "http://localhost:5000/api/post/entertainment";
@@ -44,15 +45,29 @@ function Entert() {
                   <div key={item._id}>
                     <div className="sport-img">
                       {item.newsPhoto ? (
-                        <img src={item.newsPhoto} alt="" />
+                        <Link to={`/${item._id}`}>
+                          <img src={item.newsPhoto} alt="" />
+                        </Link>
                       ) : (
-                        <img src="assets/blog.jpg" alt="" />
+                        <Link to={`/${item._id}`}>
+                          <img src="assets/blog.jpg" alt="" />
+                        </Link>
                       )}
                       <div className="cat-color">
                         {item.category === "Fashion" ? (
-                          <span className="fashion">Fashion</span>
+                          <Link to="/Fashion">
+                            <span className="fashion">Fashion</span>
+                          </Link>
                         ) : item.category === "Entertainment" ? (
-                          <span className="market">Entertainment</span>
+                          <Link to="/Fashion">
+                             <span className="market">Entertainment</span>
+                          </Link>
+                         
+                        ) : item.category === "Beauty" ? (
+                          <Link to="/Fashion">
+                             <span className="market">Beauty</span>
+                          </Link>
+                         
                         ) : (
                           ""
                         )}
@@ -68,7 +83,7 @@ function Entert() {
                           {item.create.slice(0, 10)}
                         </div>
                       </div>
-                      <div className="sport-title">{item.title}</div>
+                      <div className="sport-title"> <Link to={`/post/${item._id}`}>{item.title}</Link> </div>
                       <div className="excerp">
                         {item.body.length > 130 ? (
                           <span>{item.body.slice(0, 130)}...</span>
@@ -83,7 +98,7 @@ function Entert() {
             )}
           </div>
         </div>
-        <EntAds/>
+        <EntAds />
       </div>
     </div>
   );

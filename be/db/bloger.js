@@ -23,9 +23,83 @@ const blogerSchema = new Schema(
         },
         name:{
             type:String,
-            require: true
-        }
+            require: false
+        },
+        niche:{
+            type:String,
+            require:false
+        }, 
+        bio:{
+            type:String,
+            require:false
+        }, 
+        quote:{
+            type:String,
+            require:false
+        },
+        goal:{
+            type:[String],
+            require:false
+        }, 
+        frustration:{
+            type:[String],
+            require:false
+        }, 
+        price:{
+            type:Number,
+            require:false
+        },
+        comfort:{
+            type:Number,
+            require:false
+        }, 
+        speed:{
+            type:Number,
+            require:false
+        },
+        mile:{
+            type:Number,
+            require:false
+        },
+        convenience:{
+            type:Number,
+            require:false
+        },
+        introvert:{
+            type:Number,
+            require:false
+        },
+        creative:{
+            type:Number,
+            require:false
+        }, 
+        loyal:{
+            type:Number,
+            require:false
+        },
+        passive:{
+            type:Number,
+            require:false
+        },
+        location:{
+            type:String,
+            require:false
+        },
+        age:{
+            type:Number,
+            require:false
+        }, 
+        status:{
+            type:String,
+            require:false
+        },
+        tags:{
+            type:[String],
+            require:false
+        },
 
+
+        
     }, {timestamps: true}
     )
 

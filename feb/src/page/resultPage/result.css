@@ -1,0 +1,35 @@
+.result-complete {
+  padding: 2rem 5%;
+  display: flex;
+  gap: 0rem 2rem;
+}
+.result-list{
+  
+}
+.result-list li {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.2rem -2.5rem;
+}
+.resul-img {
+  width: clamp(20vw, 25vw + 2rem, 20rem);
+}
+.resul-img img {
+  width: clamp(20vw, 55vw + 2rem, 20rem);
+}
+.thesecond-result .sec-two-two{
+   margin: 1rem 3.2rem;
+}
+.result-content .result-title{
+    font-weight: 550;
+    font-size: clamp(100%, 1.2vw + .5rem, 1.3rem);
+}
+.result-content .result-excap{
+   padding: 1rem 0 .7rem 0;
+}
+.result-date-auth{
+    display: flex;
+    justify-content: space-between;
+}

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./latest.css";
 
-function Seclat() {
-  const baseUrl = "http://localhost:5000/api/post/four";
+function Seclat({ topic, theRange, headline }) {
+  const baseUrl = `http://localhost:5000/api/post/${topic}`;
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -21,7 +21,7 @@ function Seclat() {
         }
 
         const data = await response.json();
-        setPost(data);
+        setPost(data.slice(0, theRange));
         setLoading(false);
       } catch (error) {
         setError("Cannot fetch data right now, please try gin later");
@@ -32,6 +32,12 @@ function Seclat() {
 
   return (
     <>
+      <div className="mostview">
+        <div>
+          <hr className="thehr" />
+        </div>{" "}
+        <span>{headline}</span>
+      </div>
       <div className="shild">
         <div className="theshi">
           {post.map((item) => (

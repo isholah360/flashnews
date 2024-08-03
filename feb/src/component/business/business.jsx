@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./bus.css";
 import Busi from "./busi";
 import SpAds from "./busAds";
-
+import { Link } from "react-router-dom";
 
 function Business() {
   const baseUrl = "http://localhost:5000/api/post/business";
@@ -39,7 +39,11 @@ function Business() {
             <div>
               <hr className="thehr" />
             </div>{" "}
-            <span>Busines</span>
+            <div className="feat-cat">
+              <Link to="/Business">
+                <span>Business</span>
+              </Link>
+            </div>
           </div>
           <div className="fetch-bus">
             {loading ? (
@@ -52,15 +56,23 @@ function Business() {
                   <div key={item._id}>
                     <div className="sport-img">
                       {item.newsPhoto ? (
-                        <img src={item.newsPhoto} alt="" />
+                        <Link to={`post/${item._id}`}>
+                          <img src={item.newsPhoto} alt="" />
+                        </Link>
                       ) : (
-                        <img src="assets/blog.jpg" alt="" />
+                        <Link to={`post/${item._id}`}>
+                          <img src="assets/blog.jpg" alt="" />
+                        </Link>
                       )}
                       <div className="cat-color">
                         {item.category === "Business" ? (
-                          <span className="business">Busines</span>
+                          <Link to="/Business">
+                            <span className="business">Business</span>
+                          </Link>
                         ) : item.category === "Marketing" ? (
-                          <span className="market">Marketing</span>
+                          <Link to="/Business">
+                            <span className="market">Marketing</span>
+                          </Link>
                         ) : (
                           ""
                         )}
@@ -76,7 +88,15 @@ function Business() {
                           {item.create.slice(0, 10)}
                         </div>
                       </div>
-                      <div className="sport-title">{item.title}</div>
+                      <div className="sport-title">
+                        {" "}
+                        <Link to={`post/${item._id}`}>
+                          {item.title.length > 64
+                            ? item.title.slice(0, 64)
+                            : item.title}
+                          ...
+                        </Link>
+                      </div>
                       <div className="excerp">
                         {item.body.length > 125 ? (
                           <span>{item.body.slice(0, 125)}...</span>

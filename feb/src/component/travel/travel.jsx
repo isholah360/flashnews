@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./travel.css";
 
-function Travel({vary, varys, title}) {
+function Travel({ vary, varys, title }) {
   const baseUrl = `http://localhost:5000/api/post/${vary}`;
   const baseUri = `http://localhost:5000/api/post/${varys}`;
   const [post, setPost] = useState([]);
@@ -45,7 +46,7 @@ function Travel({vary, varys, title}) {
   }, []);
   return (
     <>
-      <div style={{ padding: ".5rem 0" }}>
+      <div style={{ padding: "1.2rem 0" }}>
         <hr
           style={{
             margin: "-2rem 0% 1rem 0",
@@ -56,12 +57,13 @@ function Travel({vary, varys, title}) {
         <div className="mostview">
           <div>
             <hr className="thehr" />
-          </div>{" "}
-          <span>{title}</span>
+          </div>
+          <Link to={`/${title}`}>
+            <span>{title}</span>
+          </Link>
         </div>
-        <div className="travel-component">
-          <div className="travel-fotocontent">
-            {" "}
+        <div className="travel-components">
+          <div className="tracel-fotoz">
             {loading ? (
               <span>loading...</span>
             ) : error ? (
@@ -69,16 +71,24 @@ function Travel({vary, varys, title}) {
             ) : (
               <div>
                 {post.map((item) => (
-                  <div key={item._id} className="travel-sec-foto">
-                    {item.newsPhoto ? <img src={item.newsPhoto} alt="" /> : item.newsPhoto ==="" ? <img src='assets/blog.jpg' alt="" />: ""}
-                    
+                  <div key={item._id} className="main-travel-photo">
+                    {item.newsPhoto ? (
+                      <Link to={`/post/${item._id}`}>
+                        <img src={item.newsPhoto} alt="" />
+                      </Link>
+                    ) : item.newsPhoto === "" ? (
+                      <Link to={`/post/${item._id}`}>
+                        <img src="/assets/blog.jpg" alt="" />
+                      </Link>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 ))}
               </div>
             )}
           </div>
           <div className="travel-justcontent">
-            {" "}
             {loading ? (
               <span>loading...</span>
             ) : error ? (
@@ -86,10 +96,11 @@ function Travel({vary, varys, title}) {
             ) : (
               <div>
                 {postFour.map((item) => (
-                    <ul key={item._id}>
-                        <li style={{listStyle:"initial"}}>{item.title}</li>       
-                    </ul>
-                  
+                  <div key={item._id}>
+                    <li style={{ listStyle: "initial" }}>
+                      <Link to={`/post/${item._id}`}>{item.title}</Link>{" "}
+                    </li>
+                  </div>
                 ))}
               </div>
             )}

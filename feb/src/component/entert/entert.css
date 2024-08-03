@@ -12,6 +12,23 @@
     gap: 1rem 2rem;
     max-width: 60vw;
     margin: 2rem 0;
+    position: relative;
+}
+.cat-color{
+
+}
+.market{
+    padding: 0.2rem 0.8rem;
+    background-color: rgb(182, 114, 245);
+}
+.fashion{
+    padding: 0.2rem 0.8rem;
+    background-color: rgb(167, 89, 240);
+    border-radius: 10px;
+    color: #fff;
+}
+.mainweek .Politics a{
+    color: rgb(29, 29, 29);
 }
 @media screen and (max-width: 760px) {
     .complete-entert{

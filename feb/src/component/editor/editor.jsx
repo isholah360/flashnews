@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./editor.css";
+import RelatedPost from "../../page/post/relatedPost";
 
 function Editor() {
   const baseUrl = "http://localhost:5000/api/post/four";
@@ -27,45 +29,33 @@ function Editor() {
   }, []);
   return (
     <>
-
-    <div className="theads">
-      <img src="assets/ads.jpg" alt="" />
-    </div>
+      <div className="theads">
+        <img src="assets/ads.jpg" alt="" />
+      </div>
       <div style={{ padding: "3rem 5%" }}>
-        <hr style={{ margin: "0rem 0% 1rem 0", height: ".1rem", background:"gray"}} />
+        <hr
+          style={{
+            margin: "0rem 0% 1rem 0",
+            height: ".1rem",
+            background: "gray",
+          }}
+        />
         <div className="mostview">
           <div>
             <hr className="thehr" />
           </div>{" "}
-          <span>FEATURE NEWS</span>
+          <span>FEATURE POLITICS</span>
         </div>
         <div className="features">
-          {loading ? (
-            <span>Loading</span>
-          ) : error ? (
-            <span>{error}</span>
-          ) : (
-            post.map((item) => (
-              <div key={item._id} className="feat-foto">
-                {item.newsPhoto ? (
-                  <img src={item.newsPhoto} alt="" />
-                ) : (
-                  <img src="assets/blog.jpg" alt="" />
-                )}
-                <div className="feat-cover">
-                  <div className="feat-cont">
-                    <div className="date-cat">
-                      <div className="feat-cat">{item.category} </div>
-                      <span style={{padding:"0 .3rem"}}>/</span>
-                      <div className="feat-cat"> {item.create.slice(0, 10)}</div>
-                    </div>
-
-                    <div className="feat-title">{item.title}</div>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
+          <div className="the-editor">
+            <RelatedPost
+              secDisplay="block"
+              buttonDisplay="none"
+              relatedCat="Politics"
+              theUrl="http://localhost:5000/api/post"
+              amountX="4"
+            />
+          </div>
         </div>
       </div>
     </>

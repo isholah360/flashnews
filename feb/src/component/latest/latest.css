@@ -1,17 +1,59 @@
 .newimg {
-  width: 12rem;
-  height: 27rem;
+  width: 55rem;
+  height: 32rem;
+  position: relative; 
+}
+.newimg img{
+  width: 100%;
+  height: 100%;
+}
+.crypt-img-cov{
+  border-image: fill 1 linear-gradient(#ffffff00, #ffffff00, #00000065, #000000ee);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 0 2rem;
+}
+.lat-cat{
+  margin: 22em 0 0 0;
+  color: #fff;
 }
 .list {
   
 }
+.latest-button{
+  position: absolute;
+  top: 50%;
+  left:clamp(70%, 48vw + 2rem, 38rem);
+  width: 100%;
+}
+.latest-button .butoon{
+  width: 100%;
+}
+.latest-button .butoon .button{
+  background-color: #5f5f5f;
+  color: #f3f3f3;
+  cursor: pointer;
+}
+.latest-button .butoon .button:hover{
+  background-color: #f3f3f3;
+  color:  #5f5f5f;
+  
+}
+
 .lists {
   position: relative;
-  width: 15rem;
-  height: 27rem;
+  width: 28rem;
+  height: 30rem;
 }
 .cate {
   color: #fff;
+}
+.categ{
+  color: #fff;
+  padding: 0 2rem;
+  font-size: 1.2rem;
 }
 .title-sum {
   position: absolute;
@@ -57,21 +99,33 @@
 
 .minlist {
   display: grid;
-  gap: 1.8rem;
+  gap: 3rem;
   grid-template-columns: 3fr 2fr;
   padding: 0rem 5%;
   margin: 2rem 0 2rem 0;
 }
+.hero-title{
+  font-size: clamp(2vw, 2vw + .76rem, 1.5rem); 
+  margin-top: 1rem;
+  font-weight: 600;
+  width: 80%;
+}
 .lat-left {
-  width: 53vw;
+  width: clamp(25vw, 54vw + 1rem, 55vw);
+  height: 30rem;
+  position: relative;
+}
+.lat-left div .slick-slider .slick-dots{
+  display: none;
 }
 .lat-right {
   width: 35vw;
+  padding: 2rem 0;
 }
 .shild {
 }
 .theshi {
-  width: 30vw;
+  width: clamp(15rem, 30vw + 1rem, 22rem);
   margin: 1rem 0;
 }
 .ins1 {
@@ -133,6 +187,13 @@
   margin: ".6rem 0";
   padding: "0rem 0 .2rem 0";
 }
+.xtra-button{
+  display: none;
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  z-index: 1000;
+}
 @media screen and (max-width: 300px) {
   .new_photo {
     display: none;
@@ -169,12 +230,35 @@
   }
   .lists {
     position: relative;
-    width: 15rem;
+    width: 100%;
     max-height: 28rem;
+    border-image: fill 1 linear-gradient(#fff #000);
   }
   .newimg{
+    width: 100%;
+    max-height: 28rem; 
+    border-image: fill 1 linear-gradient(#fff #000);
+  }
+  .newimg img{
+    width: 100%;
+    border-image: fill 1 linear-gradient(#fff #000);
+  }
+  .crypt-img-cover{
+    border-image: fill 1 linear-gradient(#fff, #000);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 100;
   }
  .lat-left div div ul li{
     display: none;
  }
+ .lat-cat{
+  margin: 20em 0 0 0;
+  color: #fff;
+}
+.lat-left .dot-list .slick-initialized ul{
+  opacity: 0;
+}
 }

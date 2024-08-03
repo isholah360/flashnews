@@ -1,24 +1,34 @@
 .the-footer-path{
     display: grid;
     text-align: left;
-    grid-template-columns: repeat(auto-fit, minmax(22%, 1fr));
+    overflow-x: hidden;
+    grid-template-columns: 2fr 4fr;
     gap: 1rem 2.5rem;
     padding: 2rem 10%;
     background-color: #212121;
     color: #fff;
+    font-size: clamp(.85rem, .9vw + .5rem, 1rem);
 }
-.date-up-comm {
- margin-left: 2rem;
+.other-secton{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); 
+    font-size: clamp(.85rem, .9vw + .5rem, 1rem);
 }
+
 .date-up-comm p{
-    font-size: 1.2rem;
+    font-size: clamp(.85rem, 1vw + .5rem, 1.2rem);
     font-weight: 500;
     
 }
 .date-up-comm .date-com-list{
    margin: .5rem 0;
+   width: 4rem;
 }
-
+.date-com-list a{
+    list-style: none;
+    color: #fff;
+ }
+ 
 .date-up-pages .date-com-list{
     margin: .5rem 0;
     width: 3rem;
@@ -32,17 +42,17 @@
     width: 10rem;
  }
 .date-up-pages p{
-    font-size: 1.2rem;
+    font-size: clamp(.85rem, 1vw + .5rem, 1.2rem);
     font-weight: 500; 
     cursor: pointer;  
 }
 .date-up-social p{
-    font-size: 1.2rem;
+    font-size: clamp(.85rem, 1vw + .5rem, 1.2rem);
     font-weight: 500; 
     cursor: pointer;
 }
 .date-up-register p{
-    font-size: 1.2rem;
+    font-size: clamp(.85rem, 1vw + .5rem, 1.2rem);
     font-weight: 500; 
 }
 .date-up-pages .date-com-list{
@@ -92,6 +102,7 @@
 .little-content form{
     display: flex;
     align-items: center;
+    max-width: clamp(40%, 13vw + .5rem, 14rem);
 }
 .little-content form{
     position: relative;
@@ -99,7 +110,7 @@
 }
 .little-content form input{
     max-width: clamp(2rem, 4vw + .5rem, 5rem);
-    padding: .2rem 7rem .2rem 1rem;
+    padding: .2rem clamp(20%, 50%, 7rem) .2rem 1rem;
     height: 1.5rem;
     border-style: none;
 }
@@ -113,11 +124,10 @@
 
 @media screen and (max-width: 760px) {
     .the-footer-path{
-        display: grid;
-        text-align: left;
         grid-template-columns: 1fr;
-        width: 85vw;
-        margin: 3rem auto;
+    }
+    .other-secton{
+        grid-template-columns: 1fr;
     }
 }
 

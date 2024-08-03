@@ -1,20 +1,55 @@
 .time-date{
-    background: black;
-    height: 3rem;
-    color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    font-size: .9rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 2.5rem;
+    padding: 0rem 5%;
+    background-color: black;
+    color: lightgrey;
+    position: relative;
 }
-ul{
-    list-style: none;
+.login-re ul{
     display: flex;
-    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.login-re ul a{
+    color: #fff;
+    list-style: none;
+   
+}
+.login-re ul a .listchange{
+  padding: .2rem .5rem;
+}
+
+.login-re ul a .listchange:hover{
+  background-color: #dadada;
+  color: rgb(56, 56, 56);
+  border-radius: 5px;
+  font-family: 500;
+}
+.media-log img{
+  width: 1rem;
+  height: 1rem;
+  filter: invert(99%) sepia(36%) saturate(2%) 
+  hue-rotate(150deg) brightness(113%) contrast(101%);
+}
+.header-soc{
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding-top: .5rem;
+  margin-left: 3rem;
 }
 @media screen and (max-width: 760px) {
-    .time-date{
-        display: none;
-    } 
-}
+  .login-re{
+    top: 0;
+    position: absolute;
+    left: 0;
+  }
+  .login-re{
+    display: none;
+  }
+    
+    }

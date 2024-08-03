@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./sport.css";
 
 const getRandomInt = (min, max) => {
@@ -34,22 +35,44 @@ function SpGrid() {
           <div key={item._id}>
             <div className="spgrid-content">
               <div className="spg-img">
-                <img src={item.newsPhoto} alt="" />
+                <Link to={`/post/${item._id} `}>
+                  <img src={item.newsPhoto} alt="" />
+                </Link>
               </div>
               <div className="spg-content">
-                <div className="spg-title">{item.title}</div>
+                <div className="spg-title">
+                  <Link to={`/post/${item._id} `}>{item.title}</Link>
+                </div>
                 <div className="byauth">
-                  <div className="spg-author">{item.author ? <span>{item.author}</span>: "Tunrayo"}</div>
+                  <div className="spg-author">
+                    {item.author ? <span>{item.author}</span> : "Tunrayo"}
+                  </div>
                   <div className="like-comment">
                     <div className="like-number">
                       <img src="assets/like.png" alt="" />
-                      <span style={{ margin: "0 -.5rem", fontSize: ".9rem",  paddingTop:".05rem"}}>
+                      <span
+                        style={{
+                          margin: "0 -.5rem",
+                          fontSize: ".9rem",
+                          paddingTop: ".05rem",
+                        }}
+                      >
                         {getRandomInt(10, 100)}
                       </span>
                     </div>
                     <div className="like-number">
-                      <img style={{marginLeft:".3rem"}} src="assets/com.png" alt="" />
-                      <span style={{ margin: "0 -.5rem", fontSize: ".9rem",  paddingTop:".05rem"}}>
+                      <img
+                        style={{ marginLeft: ".3rem" }}
+                        src="assets/com.png"
+                        alt=""
+                      />
+                      <span
+                        style={{
+                          margin: "0 -.5rem",
+                          fontSize: ".9rem",
+                          paddingTop: ".05rem",
+                        }}
+                      >
                         {getRandomInt(5, 50)}
                       </span>
                     </div>

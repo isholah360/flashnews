@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../business/busads.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function EntAds() {
+function EntAds({weekly}) {
   const baseUrl = "http://localhost:5000/api/post/all";
 
   const [weekpost, setWeekpost] = useState();
@@ -48,16 +48,16 @@ function EntAds() {
         <span>Categories</span>
       </div>
       <div className="mainweek">
-       <div className="Politics">Politics</div>
-       <div className="Politics">Business</div>
-       <div className="Politics">Investment</div>
-       <div className="Politics">Lifestyle</div>
-       <div className="Politics">Entertainment</div>
-       <div className="Politics">Travel</div>
-       <div className="Politics">Technology</div>
-       <div className="Politics">Fashion</div>
+       <div className="Politics"><NavLink to="/Politics"> Politics</NavLink></div>
+       <div className="Politics"><NavLink to="/Business"> Busines</NavLink></div>
+       <div className="Politics"><NavLink to="/Lifestyle"> Lifestyle</NavLink></div>
+       <div className="Politics"><NavLink to="/Entertainment"> Entertainment</NavLink></div>
+       <div className="Politics"><NavLink to="/Cryptocurrency"> Cryptocurrency</NavLink></div>
+       <div className="Politics"><NavLink to="/Travel"> Travel</NavLink></div>
+       <div className="Politics"><NavLink to="/Technology"> Technology</NavLink></div>
+       <div className="Politics"><NavLink to="/Fashion"> Fashion</NavLink></div>
       </div>
-      <div className="weeklypost">
+      <div className="weeklypost" style={{display:`${weekly}`}}>
         <div className="mostview">
           <div>
             <hr className="thehr" />

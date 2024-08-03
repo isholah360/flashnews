@@ -37,12 +37,12 @@ const login = async (req, res, next) => {
     const { email, password } = req.body;
 
     const user = await Bloger.findOne({ email });
-    if (!user) return res.status(404).json({ message: "wrong credential" });
+    if (!user) return res.status(400).json({ message: "wrong credential" });
 
     const correctPs = bcryptjs.compareSync(password, user.password);
     if (!correctPs) return next(errorHandler(404, "wrong credential"));
 
-    const secreteCode = "ishola360";
+    const secreteCode = process.env.SECRETE_CODE;
 
     const { password: hashedPs, ...resp } = user._doc;
     const token = jwt.sign({ userId: user._id }, secreteCode);
@@ -71,6 +71,24 @@ const update = async (req, res, next) => {
           email: req.body.email,
           username: req.body.username,
           name: req.body.name,
+          price: req.body.price,
+          niche: req.body.niche,
+          loyal: req.body.loyal,
+          creative: req.body.creative,
+          passive: req.body.passive,
+          introvert: req.body.introvert,
+          convenience: req.body.convenience,
+          mile: req.body.mile,
+          speed: req.body.speed,
+          comfort: req.body.comfort,
+          bio: req.body.bio,
+          frustration: req.body.frustration,
+          age: req.body.age,
+          status: req.body.status,
+          location: req.body.location,
+          tags: req.body.tags,
+          goal: req.body.goal,
+          quote: req.body.quote,
         },
       },
       { new: true }
@@ -82,6 +100,7 @@ const update = async (req, res, next) => {
     return res.status(500).json("Internal Server Error");
   }
 };
+
 const findUser = async (req, res, next) => {
   try {
     const findAcc = await Bloger.find();
@@ -92,6 +111,19 @@ const findUser = async (req, res, next) => {
     return res.status(500).json("Internal Server Error");
   }
 };
+
+// const userProfs = async (req, res, next) => {
+//   try {
+//     const userId = req.params.id;
+//     console.log(userId)
+//     const user = await Bloger.findById(userId);
+
+//     res.status(200).json(user);
+//   } catch (error) {
+//     console.log(error); // Log the actual error object
+//     return res.status(500).json("Internal Server Error");
+//   }
+// };
 
 const deleteUser = async (req, res, next) => {
   try {
@@ -147,13 +179,13 @@ const makePost = async (req, res, next) => {
     }
   } catch (error) {
     console.log(error); // Log the actual error object
-    return res.status(500).json("Internal Server Error");
+    return res.status(500).json("Internal server error");
   }
 };
 // findpost limit 5
 const Posts = async (req, res, next) => {
   try {
-    const post = await Post.find({}).sort({ createdAt: -1 }).limit(5);
+    const post = await Post.find({}).sort({ createdAt: -1 }).limit(10);
     if (post) return res.status(200).json(post);
   } catch (error) {
     console.log(error); // Log the actual error object
@@ -176,10 +208,20 @@ const fourPost = async (req, res, next) => {
 };
 // All Posts
 const allPost = async (req, res, next) => {
+  const { search } = req.query;
+
   try {
-    const post = await Post.find({ })
-      .sort({ createdAt: -1 })
-      .limit();
+    const query = {};
+    if (search) {
+      // Use $or to search across multiple fields
+      query.$or = [
+        { title: { $regex: new RegExp(search, 'i') } },
+        { author: { $regex: new RegExp(search, 'i') } },
+        { category: { $regex: new RegExp(search, 'i') } }
+      ];
+    }
+    
+    const post = await Post.find(query).sort({ createdAt: -1 }).limit();
     if (post) return res.status(200).json(post);
   } catch (error) {
     console.log(error); // Log the actual error object
@@ -187,12 +229,41 @@ const allPost = async (req, res, next) => {
   }
 };
 
+// All custom
+const customPost = async (req, res, next) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const customing = req.query.customing;
+    console.log(customing);
 
+    const startIndex = (page - 1) * limit;
+    const total = await Post.countDocuments({ category: customing });
+
+    const posts = await Post.find({ category: customing })
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .skip(startIndex);
+
+    // const post = await Post.find({}).sort({ createdAt: -1 }).limit();
+    if (posts)
+      return res.status(200).json({
+        total,
+        page,
+        limit,
+        totalPages: Math.ceil(total / limit),
+        posts,
+      });
+  } catch (error) {
+    console.log(error); // Log the actual error object
+    return res.status(500).json("Internal Server Error");
+  }
+};
 
 // One Posts tech
 const lifeOne = async (req, res, next) => {
   try {
-    const post = await Post.find({ category:"Lifestyle" })
+    const post = await Post.find({ category: "Lifestyle" })
       .sort({ createdAt: -1 })
       .limit(1);
     if (post) return res.status(200).json(post);
@@ -204,10 +275,24 @@ const lifeOne = async (req, res, next) => {
 // Four Posts tech
 const lifeFour = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Lifestyle" })
+    const post = await Post.find({ category: "Lifestyle" })
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(4);
+    if (post) return res.status(200).json(post);
+  } catch (error) {
+    console.log(error); // Log the actual error object
+    return res.status(500).json("Internal Server Error");
+  }
+};
+// latestNew
+const latestNews = async (req, res, next) => {
+  try {
+    const post = await Post.find({
+      category: { $in: ["Politics", "Business", "Technology", "LifeStyle"] },
+    })
+      .sort({ createdAt: -1 })
+      .limit(5);
     if (post) return res.status(200).json(post);
   } catch (error) {
     console.log(error); // Log the actual error object
@@ -218,7 +303,7 @@ const lifeFour = async (req, res, next) => {
 // One Posts tech
 const techOne = async (req, res, next) => {
   try {
-    const post = await Post.find({ category:"Technology" })
+    const post = await Post.find({ category: "Technology" })
       .sort({ createdAt: -1 })
       .limit(1);
     if (post) return res.status(200).json(post);
@@ -230,7 +315,7 @@ const techOne = async (req, res, next) => {
 // Four Posts tech
 const techFour = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Technology" })
+    const post = await Post.find({ category: "Technology" })
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(4);
@@ -241,11 +326,10 @@ const techFour = async (req, res, next) => {
   }
 };
 
-
 // One Posts travel
 const travelOne = async (req, res, next) => {
   try {
-    const post = await Post.find({ category:"Travel" })
+    const post = await Post.find({ category: "Travel" })
       .sort({ createdAt: -1 })
       .limit(1);
     if (post) return res.status(200).json(post);
@@ -257,7 +341,7 @@ const travelOne = async (req, res, next) => {
 // Four Posts travel
 const travelFour = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Travel" })
+    const post = await Post.find({ category: "Travel" })
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(4);
@@ -271,7 +355,7 @@ const travelFour = async (req, res, next) => {
 // Four Posts sport
 const sportNews = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Sport" })
+    const post = await Post.find({ category: "Sport" })
       .sort({ createdAt: -1 })
       .limit();
     if (post) return res.status(200).json(post);
@@ -285,7 +369,7 @@ const sportNews = async (req, res, next) => {
 
 const crypto = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Cryptocurrency"})
+    const post = await Post.find({ category: "Cryptocurrency" })
       .sort({ createdAt: -1 })
       .limit(1);
     if (post) return res.status(200).json(post);
@@ -297,7 +381,7 @@ const crypto = async (req, res, next) => {
 // Four Posts travel
 const cryptoFour = async (req, res, next) => {
   try {
-    const post = await Post.find({category:"Cryptocurrency"})
+    const post = await Post.find({ category: "Cryptocurrency" })
       .sort({ createdAt: -1 })
       .skip(1)
       .limit(4);
@@ -311,7 +395,9 @@ const cryptoFour = async (req, res, next) => {
 // Four Posts travel
 const Business = async (req, res, next) => {
   try {
-    const post = await Post.find({category:{$in: ["Business", "Marketing"]}})
+    const post = await Post.find({
+      category: { $in: ["Business", "Marketing"] },
+    })
       .sort({ createdAt: -1 })
       .skip()
       .limit();
@@ -321,9 +407,12 @@ const Business = async (req, res, next) => {
     return res.status(500).json("Internal Server Error");
   }
 };
+
 const entertain = async (req, res, next) => {
   try {
-    const post = await Post.find({category:{$in: ["Entertainment", "Fashion", "Movies"]}})
+    const post = await Post.find({
+      category: { $in: ["Entertainment", "Fashion", "Movies"] },
+    })
       .sort({ createdAt: -1 })
       .skip()
       .limit();
@@ -333,11 +422,26 @@ const entertain = async (req, res, next) => {
     return res.status(500).json("Internal Server Error");
   }
 };
+
 //single post
 const findPost = async (req, res, next) => {
   try {
     postId = req.params.id;
     const post = await Post.findById(postId);
+    if (!post) return next(errorHandler(404, "post does not exist"));
+    return res.status(201).json(post);
+  } catch (error) {
+    console.log(error); // Log the actual error object
+    return res.status(500).json("Internal Server Error");
+  }
+};
+
+/* Category */
+
+const categoryPost = async (req, res, next) => {
+  try {
+    category = req.params.category;
+    const post = await Post.find({ category: category });
     if (!post) return next(errorHandler(404, "post does not exist"));
     return res.status(201).json(post);
   } catch (error) {
@@ -395,11 +499,19 @@ module.exports = {
   Posts,
   findUser,
   fourPost,
-  allPost, 
- techFour, 
- techOne, 
- travelOne, 
- travelFour, 
- lifeOne, 
- lifeFour, sportNews, Business, crypto, cryptoFour, entertain
+  allPost,
+  techFour,
+  techOne,
+  travelOne,
+  travelFour,
+  lifeOne,
+  customPost,
+  lifeFour,
+  sportNews,
+  Business,
+  crypto,
+  cryptoFour,
+  entertain,
+  categoryPost,
+  latestNews,
 };

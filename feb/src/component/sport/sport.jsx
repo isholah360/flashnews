@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./sport.css";
 import Seclat from "../latest/seclat";
 import SpGrid from "./spGrid";
-import SpAds from "./spAds";
+import SpAdsz from "./spAds";
 
 function Sport() {
   const baseUrl = "http://localhost:5000/api/post/sport";
@@ -31,10 +32,12 @@ function Sport() {
       <div>
         <div className="sport-component">
           <div className="mostview">
-            {/* <div>
+            <div>
               <hr className="thehr" />
-            </div>{" "} */}
-            <span>DON'T MISS SPORT</span>
+            </div>{" "}
+            <Link to="/Sport">
+              <span>DON'T MISS SPORT</span>
+            </Link>
           </div>
           <div className="sport-display">
             <div className="sp-gridone">
@@ -44,9 +47,13 @@ function Sport() {
                   <div className="sport-img-content">
                     <div className="sport-img">
                       {item.newsPhoto ? (
+                        <Link to={`/post/${item._id}`}>
                         <img src={item.newsPhoto} alt="" />
+                        </Link>
                       ) : (
-                        <img src="assets/blog.jpg" alt="" />
+                        <Link to={`/post/${item._id}`}>
+                        <img src="assets/blog.jpg"  alt="" />
+                        </Link>
                       )}
                     </div>
 
@@ -57,7 +64,7 @@ function Sport() {
                           {item.create.slice(0, 10)}
                         </div>
                       </div>
-                      <div className="sport-title">{item.title}</div>
+                      <div className="sport-title"><Link to={`/post/${item._id} `}>{item.title}</Link></div>
                       <div className="excerp">
                         {item.body.length > 125 ? (
                           <span>{item.body.slice(0, 125)}...</span>
@@ -74,7 +81,7 @@ function Sport() {
               <SpGrid />
             </div>
             <div className="sp-gridtree">
-              <SpAds />
+              <SpAdsz adImage="assets/adss.jpg" />
             </div>
           </div>
         </div>

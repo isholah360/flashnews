@@ -85,6 +85,10 @@
   background-color: brown;
   padding: 0.3rem 0.7rem;
   border-radius: 5px;
+  font-size: 1rem;
+}
+.fir-col-cat{
+  margin-left: -1.5rem;
 }
 .vidtitle {
   color: white;
@@ -113,7 +117,7 @@
   .vid-section {
     background-color: #2b2b2b;
     padding: 2rem 5%;
-    min-height: 135vh;
+    min-height: 155vh;
   }
   .firstvid-sec {
     display: none;

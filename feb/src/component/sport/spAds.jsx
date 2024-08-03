@@ -4,7 +4,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function SpAds() {
+function SpAdsz({adImage}) {
   return (
     <div>
       <div className="social-media">
@@ -78,11 +78,11 @@ function SpAds() {
         <div className="the-cat">Sport</div>
         <div className="the-cat">Crypto</div>
       </div>
-      <div className="spg-ads">
-        <img src="assets/adss.jpg" alt="" />
+      <div className="spg-ads" >
+        <img src={adImage} alt="" />
       </div>
     </div>
   );
 }
 
-export default SpAds;
+export default SpAdsz;

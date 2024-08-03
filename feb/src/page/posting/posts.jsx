@@ -74,7 +74,9 @@ function Posts() {
       console.log(data);
       setSuccess(data);
       setIsLoading(false);
-      navigate("/");
+      // {data.status === 201 ?  navigate("/") : alert(data) }
+      // alert(data);
+      // navigate("/");
     } catch (error) {
       setError(error);
       setIsLoading(false);
@@ -105,7 +107,7 @@ function Posts() {
             <input
               type="text"
               style={{margin:"0 0rem 0 3rem"}}
-              name="category"
+              name="tag"
               placeholder="Tags"
               onChange={handleChange}
             />
@@ -147,7 +149,7 @@ function Posts() {
           </div>
         </div>
       </div>
-      {isLoading ? <span>Loading...</span> : <span>{success}</span>}
+      {isLoading ? <span>Loading...</span> : <span>{success === "You're unauthoried"? <span>{success}</span>: ""}</span>}
       {error && <span style={{ color: "red" }}>{error}</span>}
     </div>
   );

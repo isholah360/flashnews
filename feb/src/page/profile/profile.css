@@ -1,0 +1,315 @@
+.profileDisplay {
+  padding: 3rem 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+.the-edit-form{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    width: clamp(90%, 87vw + 1rem, 74rem);
+  }
+.profileDisplay .prof-first {
+  background: lightgray;
+  border-radius: 15px;
+}
+.profileDisplay .prof-first {
+    background: lightgray;
+    border-radius: 15px;
+  }
+
+.prof-first {
+  display: grid;
+  justify-items: center;
+  padding: 1rem 2rem;
+  max-width: clamp(80vw, 20rem, 22vw);
+}
+form .profileDisplay .prof-first {
+    display: grid;
+    justify-items: center;
+    padding: 1rem 2rem;
+    max-width: clamp(80vw, 20rem, 22vw);
+}
+.admin-profile-img {
+  width: 10rem;
+}
+.admin-profile-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+.prof-nmae {
+  font-size: 1.8vw;
+  font-weight: 600;
+  margin-top: -1rem;
+}
+.prof-nmae input{
+    
+  outline: none;
+  border-radius: 10px;
+  padding: .5rem;
+  border-style: none;
+  margin: 1rem 0;
+}
+
+.prof-niche {
+  font-weight: 500;
+  font-size: 1.5vw;
+  margin: -1rem 0 0.5rem 0;
+}
+.quote-c {
+  font-style: italic;
+  text-align: center;
+  margin: -1rem 0 0.5rem 0;
+  max-width: clamp(50vw, 65vw + .5rem, 18rem);
+}
+.quote-c span {
+  font-weight: 1000;
+  font-size: 1.2vw;
+}
+.prof-niche input{
+    outline: none;
+    border-radius: 10px;
+    padding: .5rem;
+    border-style: none;
+    margin: 1rem 0;
+}
+.quote-c textarea{
+    outline: none;
+    border-radius: 10px;
+    padding: .5rem;
+    
+  }
+.age-heights {
+  background-color: rgb(150, 150, 150);
+  padding: 1rem 1.5rem 0 1.5rem;
+  text-align: left;
+  color: #fff;
+  width: 85%;
+  margin: 0 0 1rem 0;
+  border-radius: 15px;
+}
+
+.age-cover .age {
+  padding: 0.2rem 0;
+  margin: .6rem 0;
+}
+
+.age span textarea{
+    width: 10rem;
+    border-radius: 10px;
+    border-style: none;
+    padding: .5rem .35rem 0rem .35rem;
+    outline: none;
+    height: 3vh;
+    margin-bottom: -.35rem;
+}
+.the-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+.the-tags .my-tga {
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.45rem;
+  border-radius: 10px;
+}
+.the-tags .my-tga:hover {
+  background-color: rgb(100, 100, 100);
+}
+.prof-sec {
+  width: 100%;
+}
+.the-bio {
+  background: lightgray;
+  padding: 2rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+}
+.the-bio span {
+  padding: 2rem 0;
+  font-weight: 600;
+  line-height: 2rem;
+  font-size: clamp(100%, 1.2rem + .5rem, 1.5vw);
+}
+.w3-light-grey {
+  height: 15px;
+  width: clamp(50vw, 90% 20rem);
+  background: rgb(240, 240, 240);
+  margin: 0.35rem 0;
+}
+.w3-inner-grey {
+  height: 15px;
+  width: 15px;
+  margin-left: 20%;
+  background-color: rgb(128, 128, 128);
+}
+.w3-light-gre input{
+    max-width: 8rem;
+    padding: .5rem;
+    border-radius: 10px;
+    font-size: .85rem;
+    outline: none;
+    border-style: none;
+
+}
+.creative {
+  margin-left: 80%;
+}
+.loyal {
+  margin-left: 30%;
+}
+.passive {
+  margin-left: 55%;
+}
+.name-person {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: -.5rem;
+}
+.complete-person-guage {
+  margin: 0.85rem 0;
+}
+.pers-like{
+    padding: .35rem .75rem;
+    margin: .25rem 0;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+}
+.tag-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+.the-tags input{
+    padding: .35rem 1rem;
+    max-width: 7rem;
+    border-radius: 10px;
+    height: 1rem;
+    outline: none;
+    border-style: none;
+}
+.input-add-button{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem;
+}
+.goal-input{
+    max-width: 6.8rem;
+    border-radius: 10px;
+    border-style: none;
+}
+.list-goal{
+  width: 100%;
+}
+.input-add-button div{
+   border-radius: 10px;
+   font-size: .85rem;
+   background: #e6e6e6;
+   color: black;
+   padding: .35rem .75rem;
+   border-style: none;
+}
+.the-bio ul {
+  flex-wrap: wrap;
+  list-style: block;
+  list-style-type: disc;
+  margin-left: -1rem;
+  font-weight: 500;
+}
+.price {
+  width: 20%;
+}
+.comfort {
+  width: 67%;
+}
+.convenience {
+  width: 85%;
+}
+.speed {
+  
+}
+.mile {
+  width: 55%;
+}
+.the-bio .bio-edit{
+    width: clamp(95%, 22vw + 1rem, 18.5rem);
+    border-style: none;
+    outline: none;
+    text-align: left;
+    padding: .5rem;
+    border-radius: 10px;
+}
+.complete-person-guage .w3-light-gre{
+
+}
+.complete-person-motive {
+  font-size: 0.85rem;
+}
+.complete-person-motive .w3-light-grey div {
+  border-radius: 7.5px;
+  background-color: rgb(128, 128, 128);
+  height: 15px;
+}
+.complete-person-motive .w3-light-grey {
+  border-radius: 7.5px;
+}
+.num-of-arti {
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  margin: 1.5rem 0 0 0;
+}
+.num-of-arti .num-count{
+  font-size: clamp(100%, 1.5vw + .5rem, 1.8vw);
+}
+.input-add-button div:hover{
+    color: rgb(231, 229, 229);
+    background: rgb(78, 78, 78);
+   
+}
+.edit-logout{
+  display: flex;
+  flex-wrap: wrap;
+}
+.edit-logout button{
+    border-style: none;
+    padding: .5rem .75rem;
+    border-radius: 10px;
+    color: rgb(78, 78, 78);
+    margin: 1rem 1rem 0 0;
+    font-weight: 550;
+}
+.edit-logout div{
+    border-style: none;
+    padding: .5rem .75rem;
+    border-radius: 10px;
+    color: rgb(78, 78, 78);
+    margin: 1rem 1rem 0 0;
+    font-weight: 550;
+    background: rgb(245, 244, 244);
+}
+.edit-logout button:hover{
+    color: rgb(231, 229, 229);
+    background: rgb(78, 78, 78);
+   
+}
+.edit-logout div:hover{
+    color: rgb(231, 229, 229);
+    background: rgb(78, 78, 78);
+   
+}
+.theerror{
+
+  margin: 1.2rem 0 0 0;
+ 
+}
+.theerror span{
+  color: red;
+  font-size: clamp(100%, 1vw + .2rem, 1.2rem);
+}

@@ -1,5 +1,6 @@
 import "./bus.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -42,15 +43,23 @@ function Busi() {
                   <div className="busi-foto-content">
                     <div className="busi-nfoto">
                       {item.newsPhoto ? (
-                        <img src={item.newsPhoto} alt="" />
+                        <Link to={`post/${item._id}`}>
+                          <img src={item.newsPhoto} alt="" />
+                        </Link>
                       ) : (
-                        <img src="assets/blog.jpg" alt="" />
+                        <Link to={`post/${item._id}`}>
+                          <img src="assets/blog.jpg"alt="" />
+                        </Link>
                       )}
                       <div className="cat-color busicat">
                         {item.category === "Business" ? (
-                          <span className="business">Busines</span>
+                          <Link to="/Business">
+                            <span className="business">Business</span>
+                          </Link>
                         ) : item.category === "Marketing" ? (
-                          <span className="market">Marketing</span>
+                          <Link to="/Business">
+                            <span className="market">Marketing</span>
+                          </Link>
                         ) : (
                           ""
                         )}
@@ -58,11 +67,21 @@ function Busi() {
                     </div>
                     <div className="busi-ncontent">
                       <div className="busi-categ">
-                        <span className="bus-cate-main"> {item.category}</span>
+                        <Link to="/Business">
+                          <span className="bus-cate-main">Business</span>
+                        </Link>
                         <span>{item.create.slice(0, 10)}</span>
                       </div>
 
-                      <div className="bus-contitle">{item.title}</div>
+                      <div className="bus-contitle">
+                      <Link to={`post/${item._id}`}>
+                        {item.title.length > 58
+                          ? item.title.slice(0, 58)
+                          : item.title}
+                        ...
+                        </Link>
+                      </div>
+                     
 
                       <div className="bus-auth-coment">
                         <div className="">

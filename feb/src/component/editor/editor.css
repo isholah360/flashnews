@@ -1,3 +1,7 @@
+.the-editor{
+    margin: 2rem 0;
+}
+
 .theads{
   margin: 3rem auto 1rem auto;
   display: flex;
@@ -5,11 +9,7 @@
   justify-content: center;
 }
 .features{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-    gap: 1rem;
-    padding: 0 1rem;
-    margin: 2rem 0;
+   position: relative;
 }
 .feat-foto{
     height: 19rem;
@@ -28,7 +28,10 @@
     color: #fff;
     background: linear-gradient(to bottom, rgb(225, 225, 225, .1), rgb(225, 225, 225, .2),rgb(0, 0, 0, .5), rgb(0, 0, 0, .9));
 }
-
+.the-editor div div div .slick-dots{
+    display: none;
+    opacity: 0;
+}
 .feat-cover .feat-cont{
     padding: 1rem .7rem ;
     bottom: 1rem;
@@ -39,11 +42,19 @@
    padding: .4rem 0;
    font-size: clamp(.7rem, .7rem + 1vw, 1rem);
 }
+.feat-cover .date-cat a{
+    text-decoration: none;
+    color: #fff;
+ }
 .feat-cover .feat-title{
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: clamp(.5rem, 1rem + .5vw, .85rem); ;
  }
+ .feat-title a{
+    color: #fff;
+ }
+
  @media screen and (max-width: 420px) {
     .feat-cover .feat-cont{
         /* padding: 60% .7rem ; */

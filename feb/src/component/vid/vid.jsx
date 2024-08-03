@@ -20,7 +20,7 @@ function VideFile() {
               <img src="assets/adssh.jpg" alt="" />
               <div className="vid-over">
                 <div className="over-contnt">
-                  <div className="categ">
+                  <div className="categ  fir-col-cat">
                     <span>Travel </span>
                   </div>
                   <div className="vidtitle">
@@ -36,7 +36,7 @@ function VideFile() {
               <img src="assets/tech.jfif" alt="" />
               <div className="vid-over">
                 <div className="over-contnt">
-                  <div className="categ">
+                  <div className="categ  fir-col-cat">
                     <span>Technology </span>
                   </div>
                   <div className="vidtitle">

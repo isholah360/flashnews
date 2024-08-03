@@ -1,14 +1,19 @@
-import Business from "../../component/business/business";
-import Editor from "../../component/editor/editor";
-import Entert from "../../component/entert/entert";
-import Footer from "../../component/footer/footer";
-import Latest from "../../component/latest/latest";
-import Sport from "../../component/sport/sport";
-import Travel from "../../component/travel/travel";
-import VideFile from "../../component/vid/vid";
-
+import {
+  VideFile,
+  Travel,
+  Business,
+  Editor,
+  Entert,
+  Footer,
+  Latest,
+  Seclast,
+  Sport,
+} from "../../component/index.js";
+import { Link } from "react-router-dom";
 
 import "./home.css";
+
+
 function Home() {
   return (
     <div>
@@ -16,12 +21,12 @@ function Home() {
         <Latest />
         <Editor />
         <div className="lifestyle-tavel">
-          <Travel vary="lifeone" varys="lifefour" title="LIFESTYLE" />
-          <Travel vary="techone" varys="techfour" title="TECHNOLOGY" />
+          <Travel vary="lifeone" varys="lifefour" title="Lifestyle" />
+          <Travel vary="techone" varys="techfour" title="Technology" />
         </div>
         <div className="lifestyle-tavel">
-          <Travel vary="travelone" varys="travelfour" title="TRAVEL" />
-          <Travel vary="crypto" varys="cryptofour" title="CRYPTOCURRENCY" />
+          <Travel vary="travelone" varys="travelfour" title="Travel" />
+          <Travel vary="crypto" varys="cryptofour" title="Cryptocurrency" />
         </div>
         <hr
           style={{
@@ -53,8 +58,7 @@ function Home() {
         <div className="thefull-ent">
           <img src="assets/fash4.jpg" alt="beauty" />
         </div>
-        <VideFile/>
-        <Footer/>
+        <VideFile />
       </div>
     </div>
   );

@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import CommentLike from "../../component/comlike/comlike";
+import "./sing.css";
+import SpAdsz from "../../component/sport/spAds";
+import RelatedPost from "./relatedPost";
+import Lat from "../../component/lat/lat";
+import EntAds from "../../component/entert/entAds";
 
 function SinglePost() {
   const baseUrl = "http://localhost:5000/api/post/blogs";
-  const [post, setPost] = useState()
+  const [post, setPost] = useState();
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      try { 
+      try {
         const storedPost = localStorage.getItem(`post_${id}`);
         if (storedPost) {
           setPost(JSON.parse(storedPost));
@@ -22,32 +30,155 @@ function SinglePost() {
           }
           const postData = await response.json();
           setPost(postData);
-          console.log(storedPost)
-          // Save the post data in localStorage
           localStorage.setItem(`post_${id}`, JSON.stringify(postData));
-          setLoading(false);}
-          
+          setLoading(false);
+          console.log(post.createdAt);
+        }
       } catch (error) {
         setError("Cannot fetch data right now, please try gin later");
+        setLoading(false);
       }
     };
     fetchData();
   }, [id]);
 
- 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-US", options);
+  };
+
   return (
-    <div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : error ? (
-        <div>{error}</div>
-      ) : (
-        <div>
-          <div className="title">{post.title}</div>
-          <div className="title">{post.body}</div>
-        </div>
-      )}
-    </div>
+    <>
+      <div className="sing-complete">
+        {loading ? (
+          <div>Loading...</div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          <div className="single-post-arti">
+            <div className="post-comment">
+              <div className="sing-categ">
+                <Link to="/">
+                  <div className="clas-home">Home</div>
+                </Link>
+                <Link to="/Business">
+                  <div className="class-atge">{post.category}</div>
+                </Link>
+                <div className="class-atge mob-tit">{post.title}</div>
+              </div>
+              <div className="sing-post-title">{post.title}</div>
+              <div className="date-comment-by">
+                <div className="date-and-img">
+                  <div className="dat-png">
+                    <img
+                      className="img-clasic"
+                      src="/assets/calendar.png"
+                      alt="assets/calendar.png"
+                    />
+                  </div>
+                  <div className="main-date">{formatDate(post.createdAt)}</div>
+                </div>
+                <div className="">
+                  <CommentLike formdisplay="none" />
+                </div>
+                <div className="date-and-img">
+                  <div className="dat-png">
+                    <img src="/assets/book.png" alt="assets/calendar.png" />
+                  </div>
+                  <div className="main-date">4 Mins Read</div>
+                </div>
+              </div>
+              <div className="title-img">
+                <img src={post.newsPhoto} alt="" />
+              </div>
+              <div className="title-body">
+                {post.body.split("\n").map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+              <div>
+                <div className="share-media">
+                  <div className="shared">Share this post :</div>
+                  <div className="share-med">
+                    <span className="media-img">
+                      <img src="/assets/fbcirc.png" alt="" />
+                      <div className="the-fb">Facebook</div>
+                    </span>
+                    <span className="media-img twit">
+                      <img src="/assets/twi.png" alt="" />
+                      <div className="the-fb">Twitter</div>
+                    </span>
+                    <span className="media-img inst">
+                      <img src="/assets/ins.png" alt="" />
+                      <div className="the-fb">Instagram</div>
+                    </span>
+                  </div>
+                </div>
+                <div className="sing-ads-img">
+                  <img src="/assets/ads.jpg" alt="" />
+                </div>
+                <CommentLike displays="none" />
+                <div className="sing-tagx">
+                  <div className="shared">Related Tags :</div>
+                  <div className="clas-tag">Buisness</div>
+                  <div className="clas-tag">Wealth</div>
+                  <div className="clas-tag">Job</div>
+                </div>
+                <div className="sing-ads-img seco-sing-ads">
+                  <img src="/assets/fasads.png" alt="" />
+                  <div className="sing-ads-cover">
+                    <div className="sing-cover-content">
+                      <div className="create-pers">
+                        Create a new perspective on life
+                      </div>
+                      <div className="your-ads-here">
+                        Your Ads Here (840 x 160 area)
+                      </div>
+                      <button>PURCHASE NOW</button>
+                    </div>
+                  </div>
+                </div>
+                <RelatedPost
+                  corId={post._id}
+                  relatedCat={post.category}
+                  theUrl="http://localhost:5000/api/post"
+                  amountX="3"
+                />
+              </div>
+            </div>
+            <div className="author-ads">
+              <div className="search-form in-sing-post">
+                <form>
+                  <input type="text" placeholder="Search here.." />
+                  <button className="search-sym">
+                    <img src="/assets/sa.png" alt="" />
+                  </button>
+                </form>
+              </div>
+              <div className="auh-profile">
+                <div className="auth-pro-img">
+                  {post.authorPhoto ? (
+                    <img src={post.authorPhoto} alt="" />
+                  ) : (
+                    <img src="/assets/tun.jpg" alt="" />
+                  )}{" "}
+                </div>
+                <div className="auth-pro-name">
+                  {post.author ? post.author : "Tunrayo Duro"}
+                </div>
+              </div>
+              <SpAdsz adImage="/assets/adss.jpg" />
+              <div className="sing-latest">
+                <Lat headline="LATEST NEWS" />
+              </div>
+              <div className="sing-latest">
+                <EntAds weekly="none" />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
