@@ -8,7 +8,7 @@
     "server": "node --watch be/server/index.js",
     "dev": "concurrently \"npm run client\" \"npm run server\" ",
     "client": "npm run dev  --prefix feb",
-    "build": "npm install  && npm install --prefix feb && npm run build --prefix feb"
+    "build": "npm install && npm install --prefix feb && npm run build --prefix feb"
   },
   "keywords": [],
   "author": "",
