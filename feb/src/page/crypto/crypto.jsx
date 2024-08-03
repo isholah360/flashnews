@@ -10,7 +10,6 @@ import Busi from "../../component/business/busi";
 import SpAds from "../../component/business/busAds";
 import SpAdsz from "../../component/sport/spAds";
 import Lat from "../../component/lat/lat";
-import axios from "axios";
 import SearchForm from "../../component/searchForm/searchForm";
 
 function Crypto() {
