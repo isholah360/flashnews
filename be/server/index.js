@@ -30,11 +30,11 @@ app.use('/api/cat', router)
 // app.use('/api/posts', routers);
 // app.use('/api/posts', routers);
 
-app.use(express.static(path.join(__dirname, '../../feb')));
+app.use(express.static(path.join(__dirname, '../../feb/dist')));
 
 app.get('*', (req, res) => {
     console.log('Request received:', req.url);
-    res.sendFile(path.join(__dirname, '..', '..', 'feb', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', 'feb', 'dist', 'index.html'));
 });
 
 app.use((err, req, res, next)=>{
