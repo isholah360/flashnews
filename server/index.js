@@ -2,13 +2,13 @@ const express = require('express')
 const cors = require("cors")
 const bodyparser = require('body-parser')
 const cookie = require('cookie-parser')
-const blogDb = require('../db/db')
-const { router } = require('../routes/router')
+const blogDb = require('../be/db/db')
+const { router } = require('../be/routes/router')
 // const { router } = require('../routes/router')
 const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const path = require('path');
-const { routers } = require('../routes/comrouter')
+const { routers } = require('../be/routes/comrouter')
 const port = 5000
 
 
@@ -36,11 +36,11 @@ app.use('/api/cat', router)
 
 
 
-app.use(express.static(path.join(__dirname, '../../feb/dist')));
+app.use(express.static(path.join(__dirname, '/feb/dist')));
 console.log(__dirname)
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'feb', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'feb', 'dist', 'index.html'));
 });
 
 app.use((err, req, res, next)=>{
