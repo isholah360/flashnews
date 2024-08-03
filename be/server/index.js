@@ -34,11 +34,11 @@ app.use('/api/cat', router)
 
 
 
-app.use(express.static(path.join(__dirname, '../../feb/dist')));
+app.use(express.static(path.join(__dirname, '../../../../feb/dist')));
 console.log(__dirname)
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '..', 'feb', 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', '..', '..', '..', 'feb', 'dist', 'index.html'));
 });
 
 app.use((err, req, res, next)=>{
