@@ -1,7 +1,6 @@
 // CommentLike.js
 import React, { useState, useEffect } from "react";
 import "./comlike.css";
-import axios from "axios";
 
 const CommentLike = ({ postId, userId, formdisplay, displays }) => {
   const [likes, setLikes] = useState(0);
@@ -16,49 +15,77 @@ const CommentLike = ({ postId, userId, formdisplay, displays }) => {
 
   const fetchLikes = async () => {
     try {
-      const res = await axios.get(
-        `http://localhost:5000/api/posts/${postId}/likes`,
-        { params: { userId } }
-      );
-      setLikes(res.data.likes);
-      setLiked(res.data.liked);
+      const url = new URL(`http://localhost:5000/api/posts/${postId}/likes`);
+      url.searchParams.append('userId', userId);
+      
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setLikes(data.likes);
+      setLiked(data.liked);
     } catch (error) {
       console.error(error);
     }
   };
-
+  
   const handleLike = async () => {
     try {
-      const res = await axios.post(
-        `http://localhost:5000/api/posts/${postId}/like`,
-        { userId }
-      );
-      setLikes(res.data.likes);
+      const response = await fetch(`http://localhost:5000/api/posts/${postId}/like`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setLikes(data.likes);
       setLiked(!liked);
     } catch (error) {
       console.error(error);
     }
   };
-
+  
   const fetchComments = async () => {
     try {
-      const res = await axios.get(
-        `http://localhost:5000/api/posts/${postId}/comments`
-      );
-      setComments(res.data);
+      const response = await fetch(`http://localhost:5000/api/posts/${postId}/comments`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setComments(data);
     } catch (error) {
       console.error(error);
     }
   };
-
+  
   const handleComment = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        `http://localhost:5000/api/posts/${postId}/comment`,
-        { userId, text: comment }
-      );
-      setComments([...comments, res.data]);
+      const response = await fetch(`http://localhost:5000/api/posts/${postId}/comment`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId, text: comment }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      setComments([...comments, data]);
       setComment("");
     } catch (error) {
       console.error(error);
