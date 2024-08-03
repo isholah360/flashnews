@@ -4,7 +4,6 @@ const bodyparser = require('body-parser')
 const cookie = require('cookie-parser')
 const blogDb = require('../be/db/db')
 const { router } = require('../be/routes/router')
-// const { router } = require('../routes/router')
 const cookieParser = require('cookie-parser')
 require('dotenv').config()
 const path = require('path');
@@ -36,12 +35,11 @@ app.use('/api/cat', router)
 
 
 
-app.use(express.static(path.join(__dirname, '/feb/dist')));
-console.log(__dirname)
+app.use(express.static(path.join(__dirname, '/feb/dist')))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'feb', 'dist', 'index.html'));
-});
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '..', 'feb','dist','index.html'))
+})
 
 app.use((err, req, res, next)=>{
     const statusCode = err.statusCode || 500
