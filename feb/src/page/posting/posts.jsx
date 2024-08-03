@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./posts.css";
-import axios from "axios";
+
 
 function Posts() {
   const [formData, setFormData] = useState({});
