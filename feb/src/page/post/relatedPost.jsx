@@ -120,11 +120,11 @@ function RelatedPost({ corId, relatedCat, theUrl, amountX, buttonDisplay, secDis
                 {item.category === `${corId}` ? null : (
                   <div className="related-foto">
                     {item.newsPhoto ? (
-                      <Link to={`/post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/api/post/${item._id}`}>
                         <img src={item.newsPhoto} alt="" />
                       </Link>
                     ) : (
-                      <Link to={`/post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/api/post/${item._id}`}>
                         <img src="assets/blog.jpg" alt="" />
                       </Link>
                     )}
