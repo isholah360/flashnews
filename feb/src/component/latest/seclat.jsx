@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import "./latest.css";
 
 function Seclat({ topic, theRange, headline }) {
-  const baseUrl = `http://localhost:5000/api/post/${topic}`;
+  const baseUrl = `/api/post/${topic}`;
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

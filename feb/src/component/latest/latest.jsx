@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import Seclat from "./seclat";
 
 function Latest() {
-  const baseUrl = "http://localhost:5000/api/post/blogs";
+  const baseUrl = "/api/post/blogs";
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

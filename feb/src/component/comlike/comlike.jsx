@@ -15,7 +15,7 @@ const CommentLike = ({ postId, userId, formdisplay, displays }) => {
 
   const fetchLikes = async () => {
     try {
-      const url = new URL(`http://localhost:5000/api/posts/${postId}/likes`);
+      const url = new URL(`/api/posts/${postId}/likes`);
       url.searchParams.append('userId', userId);
       
       const response = await fetch(url);
@@ -34,7 +34,7 @@ const CommentLike = ({ postId, userId, formdisplay, displays }) => {
   
   const handleLike = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${postId}/like`, {
+      const response = await fetch(`/api/posts/${postId}/like`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const CommentLike = ({ postId, userId, formdisplay, displays }) => {
   
   const fetchComments = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${postId}/comments`);
+      const response = await fetch(`/api/posts/${postId}/comments`);
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -72,7 +72,7 @@ const CommentLike = ({ postId, userId, formdisplay, displays }) => {
   const handleComment = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${postId}/comment`, {
+      const response = await fetch(`/api/posts/${postId}/comment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
