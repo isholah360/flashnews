@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 function Busynes() {
-  const baseUrl = "http://localhost:5000/api/post";
+  const baseUrl = "/api/post";
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

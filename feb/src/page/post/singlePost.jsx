@@ -9,7 +9,7 @@ import Lat from "../../component/lat/lat";
 import EntAds from "../../component/entert/entAds";
 
 function SinglePost() {
-  const baseUrl = "http://localhost:5000/api/post/blogs";
+  const baseUrl = "/api/post/blogs";
   const [post, setPost] = useState();
 
   const [loading, setLoading] = useState(true);

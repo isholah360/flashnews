@@ -7,7 +7,7 @@ const getRandomInt = (min, max) => {
 };
 
 function Busi() {
-  const baseUrl = "http://localhost:5000/api/post/business";
+  const baseUrl = "/api/post/business";
   const [secbus, setSecbus] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

@@ -40,7 +40,7 @@ const ResultsPage = () => {
     e.preventDefault();
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/post/all?q=${query}`
+        `/api/post/all?q=${query}`
       );
       if (response.data) {
         navigate("/results", {

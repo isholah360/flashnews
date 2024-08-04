@@ -6,7 +6,7 @@ import "../business/busads.css";
 import { Link, NavLink } from "react-router-dom";
 
 function EntAds({weekly}) {
-  const baseUrl = "http://localhost:5000/api/post/all";
+  const baseUrl = "/api/post/all";
 
   const [weekpost, setWeekpost] = useState();
   const [loading, setLoading] = useState(true);

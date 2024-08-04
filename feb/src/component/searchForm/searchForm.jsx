@@ -22,7 +22,7 @@ function SearchForm() {
     const handleSearch = async (e) => {
       e.preventDefault();
       try {
-        const response = await fetch(`http://localhost:5000/api/post/all?search=${query}`);
+        const response = await fetch(`/api/post/all?search=${query}`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

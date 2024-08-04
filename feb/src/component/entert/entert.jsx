@@ -4,7 +4,7 @@ import EntAds from "./entAds";
 import { Link } from "react-router-dom";
 
 function Entert() {
-  const baseUrl = "http://localhost:5000/api/post/entertainment";
+  const baseUrl = "/api/post/entertainment";
   const [ent, setEnt] = useState();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

@@ -14,7 +14,7 @@ import SearchForm from "../../component/searchForm/searchForm";
 
 function Crypto() {
   const cate = useParams();
-  const baseUrl = `http://localhost:5000/api/cat/custom?customing=${cate.category}&page=1&limit=5`; // Replace with your API endpoint
+  const baseUrl = `/api/cat/custom?customing=${cate.category}&page=1&limit=5`; // Replace with your API endpoint
   const [data, setData] = useState([]);
   // const [dataz, setDataz] = useState([]);
   const [loading, setLoading] = useState(true);

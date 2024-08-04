@@ -6,7 +6,7 @@ import SpGrid from "./spGrid";
 import SpAdsz from "./spAds";
 
 function Sport() {
-  const baseUrl = "http://localhost:5000/api/post/sport";
+  const baseUrl = "/api/post/sport";
   const [sport, setSport] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

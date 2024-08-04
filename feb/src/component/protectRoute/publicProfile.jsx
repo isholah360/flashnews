@@ -7,7 +7,7 @@ import "../../page/profile/profile.css";
 function PublicProfile() {
   const userId = useParams();
 
-  const baseUrl = "http://localhost:5000/api/writer/profile";
+  const baseUrl = "/api/writer/profile";
   const [post, setPost] = useState();
 
   const [loading, setLoading] = useState(true);

@@ -4,7 +4,7 @@ import "./editor.css";
 import RelatedPost from "../../page/post/relatedPost";
 
 function Editor() {
-  const baseUrl = "http://localhost:5000/api/post/four";
+  const baseUrl = "/api/post/four";
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

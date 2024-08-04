@@ -8,7 +8,7 @@ const getRandomInt = (min, max) => {
 };
 
 function Crypt({varies}) {
-  const baseUrl = `http://localhost:5000/api/cat/custom`; // Replace with your API endpoint
+  const baseUrl = `/api/cat/custom`; // Replace with your API endpoint
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

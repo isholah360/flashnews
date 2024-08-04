@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./travel.css";
 
 function Travel({ vary, varys, title }) {
-  const baseUrl = `http://localhost:5000/api/post/${vary}`;
-  const baseUri = `http://localhost:5000/api/post/${varys}`;
+  const baseUrl = `/api/post/${vary}`;
+  const baseUri = `/api/post/${varys}`;
   const [post, setPost] = useState([]);
   const [postFour, setPostFour] = useState([]);
   const [loading, setLoading] = useState(true);

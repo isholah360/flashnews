@@ -5,7 +5,7 @@ import SpAds from "./busAds";
 import { Link } from "react-router-dom";
 
 function Business() {
-  const baseUrl = "http://localhost:5000/api/post/business";
+  const baseUrl = "/api/post/business";
 
   const [bus, setBus] = useState([]);
   const [secbus, setSecbus] = useState([]);
