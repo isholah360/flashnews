@@ -141,7 +141,7 @@ function SinglePost() {
                 <RelatedPost
                   corId={post._id}
                   relatedCat={post.category}
-                  theUrl="http://localhost:5000/api/post"
+                  theUrl="/api/post"
                   amountX="3"
                 />
               </div>

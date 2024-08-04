@@ -52,7 +52,7 @@ function Editor() {
               secDisplay="block"
               buttonDisplay="none"
               relatedCat="Politics"
-              theUrl="http://localhost:5000/api/post"
+              theUrl="/api/post"
               amountX="4"
             />
           </div>
