@@ -52,7 +52,7 @@ function Editor() {
               secDisplay="block"
               buttonDisplay="none"
               relatedCat="Politics"
-              theUrl="/api/post"
+              theUrl="https://flashnews-y0dp.onrender.com/post"
               amountX="4"
             />
           </div>

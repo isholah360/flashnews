@@ -56,11 +56,11 @@ function Business() {
                   <div key={item._id}>
                     <div className="sport-img">
                       {item.newsPhoto ? (
-                        <Link to={`post/${item._id}`}>
+                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}}`}>
                           <img src={item.newsPhoto} alt="" />
                         </Link>
                       ) : (
-                        <Link to={`post/${item._id}`}>
+                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                           <img src="assets/blog.jpg" alt="" />
                         </Link>
                       )}
@@ -90,7 +90,7 @@ function Business() {
                       </div>
                       <div className="sport-title">
                         {" "}
-                        <Link to={`post/${item._id}`}>
+                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                           {item.title.length > 64
                             ? item.title.slice(0, 64)
                             : item.title}

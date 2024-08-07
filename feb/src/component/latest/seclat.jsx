@@ -50,7 +50,7 @@ function Seclat({ topic, theRange, headline }) {
                 )}
               </div>
               <div className="title-uthor">
-                <Link to={`/post/${item._id}`} key={item._id}>
+                <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`} key={item._id}>
                   <div className="most-title">
                     {item.title.length > 50 ? (
                       <span style={{ margin: "-20px 0" }}>

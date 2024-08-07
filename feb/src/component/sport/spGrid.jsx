@@ -35,13 +35,13 @@ function SpGrid() {
           <div key={item._id}>
             <div className="spgrid-content">
               <div className="spg-img">
-                <Link to={`/post/${item._id} `}>
+                <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                   <img src={item.newsPhoto} alt="" />
                 </Link>
               </div>
               <div className="spg-content">
                 <div className="spg-title">
-                  <Link to={`/post/${item._id} `}>{item.title}</Link>
+                  <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>{item.title}</Link>
                 </div>
                 <div className="byauth">
                   <div className="spg-author">

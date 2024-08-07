@@ -67,15 +67,15 @@ function Latest() {
                 >
                   {post.map((item) => (
                     <div key={item._id} className="list">
-                      <Link to={`/post/${item._id}`} key={item._id}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`} key={item._id}>
                         <div className="lists">
                           <div className="newimg">
                             {item.newsPhoto ? (
-                              <Link to={`/${item._id}`}>
+                              <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                                 <img src={item.newsPhoto} alt="" />
                               </Link>
                             ) : (
-                              <Link to={`/${item._id}`}>
+                              <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                                 <img src="assets/blog.jpg" alt="" />
                               </Link>
                             )}

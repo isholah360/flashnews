@@ -73,11 +73,11 @@ function Travel({ vary, varys, title }) {
                 {post.map((item) => (
                   <div key={item._id} className="main-travel-photo">
                     {item.newsPhoto ? (
-                      <Link to={`/post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                         <img src={item.newsPhoto} alt="" />
                       </Link>
                     ) : item.newsPhoto === "" ? (
-                      <Link to={`/post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                         <img src="/assets/blog.jpg" alt="" />
                       </Link>
                     ) : (
@@ -98,7 +98,7 @@ function Travel({ vary, varys, title }) {
                 {postFour.map((item) => (
                   <div key={item._id}>
                     <li style={{ listStyle: "initial" }}>
-                      <Link to={`/post/${item._id}`}>{item.title}</Link>{" "}
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>{item.title}</Link>{" "}
                     </li>
                   </div>
                 ))}

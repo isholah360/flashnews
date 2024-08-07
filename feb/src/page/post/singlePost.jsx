@@ -141,7 +141,7 @@ function SinglePost() {
                 <RelatedPost
                   corId={post._id}
                   relatedCat={post.category}
-                  theUrl="/api/post"
+                  theUrl="https://flashnews-y0dp.onrender.com/post/"
                   amountX="3"
                 />
               </div>

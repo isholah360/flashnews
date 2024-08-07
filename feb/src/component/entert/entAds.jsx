@@ -75,7 +75,7 @@ function EntAds({weekly}) {
                 <Slider {...settings}>
                   {weekpost.map((item) => (
                     <div key={item._id} className="list">
-                      <Link to={`/post/${item._id}`} key={item._id}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`} key={item._id}>
                         <div className="week-img-list">
                           <div className="week-img">
                             { <img/> ? (

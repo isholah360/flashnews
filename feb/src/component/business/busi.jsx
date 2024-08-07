@@ -43,11 +43,11 @@ function Busi() {
                   <div className="busi-foto-content">
                     <div className="busi-nfoto">
                       {item.newsPhoto ? (
-                        <Link to={`post/${item._id}`}>
+                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                           <img src={item.newsPhoto} alt="" />
                         </Link>
                       ) : (
-                        <Link to={`post/${item._id}`}>
+                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                           <img src="assets/blog.jpg"alt="" />
                         </Link>
                       )}
@@ -74,7 +74,7 @@ function Busi() {
                       </div>
 
                       <div className="bus-contitle">
-                      <Link to={`post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                         {item.title.length > 58
                           ? item.title.slice(0, 58)
                           : item.title}
