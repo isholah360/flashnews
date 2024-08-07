@@ -57,7 +57,7 @@ function Crypt({varies}) {
       {data.map((item, index) => (
         <div key={index} className="bolder-rest-content">
           <div className="cryto-rest-img">
-            <Link to={`http://localhost:5173/post/${item._id}`}>
+            <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
               <img
                 className=""
                 src={item.newsPhoto}
@@ -72,7 +72,7 @@ function Crypt({varies}) {
                 <span> {item.category}</span>
               </div>
               <div className="sec-crypt-title">
-                <Link to={`/post/${item._id}`}>
+                <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                   <div className="">{item.title}</div>
                 </Link>
               </div>

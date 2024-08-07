@@ -120,15 +120,15 @@ function RelatedPost({ corId, relatedCat, theUrl, amountX, buttonDisplay, secDis
                 {item.category === `${corId}` ? null : (
                   <div className="related-foto">
                     {item.newsPhoto ? (
-                      <Link to={`/api//post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                         <img src={item.newsPhoto} alt="" />
                       </Link>
                     ) : (
-                      <Link to={`/api/post/${item._id}`}>
+                      <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                         <img src="assets/blog.jpg" alt="" />
                       </Link>
                     )}
-                    <Link to={`/post/${item._id}`}>
+                    <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
                       <div className="feat-cover">
                         <div className="feat-cats">
                           <Link to={`/${item.category}`}>
@@ -157,7 +157,7 @@ function RelatedPost({ corId, relatedCat, theUrl, amountX, buttonDisplay, secDis
                           </div>
 
                           <div className="feat-title">
-                            <Link to={`/post/${item._id}`}>{item.title} </Link>
+                            <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>{item.title} </Link>
                           </div>
                         </div>
                       </div>
