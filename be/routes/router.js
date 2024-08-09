@@ -63,7 +63,7 @@ router.get("/entertainment", entertain);
 router.get("/all", allPost);
 router.get("/latest", latestNews);
 router.get("/custom", customPost);
-router.get("/blogs/:id", findPost);
+router.get("/blogs/:title", findPost);
 router.get("/:category", categoryPost);
 router.get("/users", findUser);
 router.put("/blogs/:id", protectPage, updatePost);

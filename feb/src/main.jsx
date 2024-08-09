@@ -29,7 +29,7 @@ const router = createBrowserRouter(
       <Route path="/register" element={<Reg />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/post/blogs/:id" element={<SinglePost />} />
+      <Route path="/post/blogs/:title" element={<SinglePost />} />
       <Route path="/:category" element={<Category />} />
       <Route path="/results" element={<ResultsPage />} />
       <Route path="/post" element={<Posts />} />

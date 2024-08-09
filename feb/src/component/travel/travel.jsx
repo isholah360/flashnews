@@ -73,11 +73,11 @@ function Travel({ vary, varys, title }) {
                 {post.map((item) => (
                   <div key={item._id} className="main-travel-photo">
                     {item.newsPhoto ? (
-                      <Link to={`/post/blogs/${item._id}`}>
+                      <Link to={`/post/blogs/${item.title}`}>
                         <img src={item.newsPhoto} alt="" />
                       </Link>
                     ) : item.newsPhoto === "" ? (
-                      <Link to={`/post/blogs/${item._id}`}>
+                      <Link to={`/post/blogs/${item.title}`}>
                         <img src="/assets/blog.jpg" alt="" />
                       </Link>
                     ) : (
@@ -98,7 +98,7 @@ function Travel({ vary, varys, title }) {
                 {postFour.map((item) => (
                   <div key={item._id}>
                     <li style={{ listStyle: "initial" }}>
-                      <Link to={`/post/blogs/${item._id}`}>{item.title}</Link>{" "}
+                      <Link to={`/post/blogs/${item.title}`}>{item.title}</Link>{" "}
                     </li>
                   </div>
                 ))}

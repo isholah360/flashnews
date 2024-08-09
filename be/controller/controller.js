@@ -424,15 +424,23 @@ const entertain = async (req, res, next) => {
 };
 
 //single post
-const findPost = async (req, res, next) => {
+const findPost = async (req, res) => {
   try {
-    postId = req.params.id;
-    const post = await Post.findById(postId);
-    if (!post) return next(errorHandler(404, "post does not exist"));
-    return res.status(201).json(post);
+    const { title } = req.params;
+    
+    if (!title) {
+      return res.status(400).json({ error: "Post title is required" });
+    }
+    const post = await Post.findOne({ 
+      title: { $regex: new RegExp('^' + title + '$', 'i') } 
+    });
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+    return res.status(200).json(post);
   } catch (error) {
-    console.log(error); // Log the actual error object
-    return res.status(500).json("Internal Server Error");
+    console.error('Error in findPost:', error);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
