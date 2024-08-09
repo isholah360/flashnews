@@ -144,7 +144,7 @@ function Crypto() {
                   <Slider {...settings}>
                     {data.map((item, index) => (
                       <div key={index} className="bolder-img">
-                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
+                        <Link to={`/post/blogs/${item._id}`}>
                           <img
                             className="crypt-main-img"
                             src={
