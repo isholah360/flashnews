@@ -45,11 +45,11 @@ function Entert() {
                   <div key={item._id}>
                     <div className="sport-img">
                       {item.newsPhoto ? (
-                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
+                        <Link to={`/post/blogs/${item.title}`}>
                           <img src={item.newsPhoto} alt="" />
                         </Link>
                       ) : (
-                        <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>
+                        <Link to={`/post/blogs/${item.title}`}>
                           <img src="assets/blog.jpg" alt="" />
                         </Link>
                       )}
@@ -83,7 +83,7 @@ function Entert() {
                           {item.create.slice(0, 10)}
                         </div>
                       </div>
-                      <div className="sport-title"> <Link to={`https://flashnews-y0dp.onrender.com/post/${item._id}`}>{item.title}</Link> </div>
+                      <div className="sport-title"> <Link to={`/post/blogs/${item.title}`}>{item.title}</Link> </div>
                       <div className="excerp">
                         {item.body.length > 130 ? (
                           <span>{item.body.slice(0, 130)}...</span>

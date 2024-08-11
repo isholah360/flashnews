@@ -67,15 +67,15 @@ function Latest() {
                 >
                   {post.map((item) => (
                     <div key={item._id} className="list">
-                      <Link to={`/post/blogs/${item._id}`} key={item._id}>
+                      <Link to={`/post/blogs/${item.title}`} key={item._id}>
                         <div className="lists">
                           <div className="newimg">
                             {item.newsPhoto ? (
-                              <Link to={`/post/blogs/${item._id}`}>
+                              <Link to={`/post/blogs/${item.title}`}>
                                 <img src={item.newsPhoto} alt="" />
                               </Link>
                             ) : (
-                              <Link to={`/post/blogs/${item._id}`}>
+                              <Link to={`/post/blogs/${item.title}`}>
                                 <img src="assets/blog.jpg" alt="" />
                               </Link>
                             )}
@@ -137,7 +137,7 @@ function Latest() {
 export default Latest;
 
 {
-  /* <div key={item._id}>
+  /* <div key={item.title}>
             
             <Link to={`/post/blogs/${item._id}`} key={item._id}>
             

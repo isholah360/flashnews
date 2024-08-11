@@ -14,33 +14,33 @@ function SinglePost() {
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { id } = useParams();
-
+  const { title } = useParams();
+  console.log(title)
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const storedPost = localStorage.getItem(`post_${id}`);
+        const storedPost = localStorage.getItem(`${title}`);
         if (storedPost) {
           setPost(JSON.parse(storedPost));
           setLoading(false);
         } else {
-          const response = await fetch(`${baseUrl}/${id}`);
+          const response = await fetch(`${baseUrl}/${title}`);
           if (!response.ok) {
             throw new Error("Failed to fetch data");
           }
           const postData = await response.json();
           setPost(postData);
-          localStorage.setItem(`post_${id}`, JSON.stringify(postData));
+          localStorage.setItem(`${title}`, JSON.stringify(postData));
           setLoading(false);
-          console.log(post.createdAt);
         }
       } catch (error) {
-        setError("Cannot fetch data right now, please try gin later");
+        setError("Cannot fetch data right now, please try again later");
         setLoading(false);
       }
     };
+  
     fetchData();
-  }, [id]);
+  }, [title]);
 
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };

@@ -182,6 +182,12 @@
   gap: 1rem;
   margin: .5rem 0;
 }
+.title-uthor a {
+  color: #000;
+}
+.title-uthor a .most-title span{
+  color: #000;
+}
 .most-title {
   font-size: "1.05rem";
   margin: ".6rem 0";
@@ -222,9 +228,7 @@
     font-size: 0.8rem;
     margin: .5rem 0 0 0;
   }
-  .title-uthor a{
-    color: #000;
-  }
+ 
   .most-title {
     font-size: ".8rem";
     margin: "1rem 0";

@@ -120,15 +120,15 @@ function RelatedPost({ corId, relatedCat, theUrl, amountX, buttonDisplay, secDis
                 {item.category === `${corId}` ? null : (
                   <div className="related-foto">
                     {item.newsPhoto ? (
-                      <Link to={`/post/blogs/${item._id}`}>
+                      <Link to={`/post/blogs/${item.title}`}>
                         <img src={item.newsPhoto} alt="" />
                       </Link>
                     ) : (
-                      <Link to={`/post/blogs/${item._id}`}>
+                      <Link to={`/post/blogs/${item.title}`}>
                         <img src="assets/blog.jpg" alt="" />
                       </Link>
                     )}
-                    <Link to={`/post/blogs/${item._id}`}>
+                    <Link to={`/post/blogs/${item.title}`}>
                       <div className="feat-cover">
                         <div className="feat-cats">
                           <Link to={`/${item.category}`}>
@@ -157,7 +157,7 @@ function RelatedPost({ corId, relatedCat, theUrl, amountX, buttonDisplay, secDis
                           </div>
 
                           <div className="feat-title">
-                            <Link to={`/post/blogs/${item._id}`}>{item.title} </Link>
+                            <Link to={`/post/blogs/${item.title}`}>{item.title} </Link>
                           </div>
                         </div>
                       </div>
