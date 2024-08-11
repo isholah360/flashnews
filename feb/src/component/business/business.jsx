@@ -90,7 +90,7 @@ function Business() {
                       </div>
                       <div className="sport-title">
                         {" "}
-                        <Link to={`/post/blogs/${item._id}`}>
+                        <Link to={`/post/blogs/${item.title}`}>
                           {item.title.length > 64
                             ? item.title.slice(0, 64)
                             : item.title}
