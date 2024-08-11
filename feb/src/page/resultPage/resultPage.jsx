@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./result.css";
 import Crypto from "../crypto/crypto";
 import Crypt from "../crypto/crypt";
@@ -39,9 +39,7 @@ const ResultsPage = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(
-        `/api/post/all?q=${query}`
-      );
+      const response = await axios.get(`/api/post/all?q=${query}`);
       if (response.data) {
         navigate("/results", {
           state: { searchResults: response.data, query },
@@ -61,22 +59,29 @@ const ResultsPage = () => {
     <>
       <div className="result-complete">
         <div className="therusult">
-          <h2 style={{margin: "3rem 0"}}>Search Results for: "{query}"</h2>
+          <h2 style={{ margin: "3rem 0" }}>Search Results for: "{query}"</h2>
           {searchResults.length > 0 ? (
             <>
               <div className="lis-display">
                 <ul className="result-list">
                   {currentResults.map((result) => (
                     <li key={result.id}>
-                      <div className="resul-img">
-                        <img src={result.newsPhoto} alt="" />
-                      </div>
+                      <Link to={`/post/blogs/${result.title}`}>
+                        <div className="resul-img">
+                          <img src={result.newsPhoto} alt="" />
+                        </div>
+                      </Link>
+
                       <div className="result-content">
-                        <div className="result-title">{result.title}</div>
+                        <Link to={`/post/blogs/${result.title}`}>
+                          <div className="result-title">{result.title}</div>
+                        </Link>
+
                         <div className="result-excap">
                           {result.body.length > 150
                             ? result.body.slice(0, 170)
-                            : result.body}.....
+                            : result.body}
+                          .....
                         </div>
                         <div className="result-date-auth">
                           <div className="result-date-auth">
@@ -114,10 +119,9 @@ const ResultsPage = () => {
           )}
         </div>
         <div className="thesecond-result">
-         
           <div>
             <div className="newstyle-two">
-            <SearchForm/>
+              <SearchForm />
               <div className="crypt-latest">
                 <Lat headline="LATEST NEWS" />
               </div>
